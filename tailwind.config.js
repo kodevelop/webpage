@@ -7,12 +7,14 @@ module.exports = {
   theme: {
     extend: {
       textColor: {
-        'de-tijd-blauw': '#ffffff',
-        'de-tijd-roze': '#18457c',
+        'kodev-blauw': '#ffffff',
+        'kodev-roze': '#18457c',
+        'kodev-green': '#5D775E',
       },
       backgroundColor: {
-        'de-tijd-blauw': '#0e2a4c',
-        'de-tijd-roze': '#f4eee2',
+        'kodev-blue': '#0e2a4c',
+        'kodev-green': '#5D775E',
+        'kodev-pink': '#f4eee2',
       }
     },
   },
