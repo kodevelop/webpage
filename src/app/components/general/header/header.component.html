@@ -1,12 +1,14 @@
 <nav
-  class="flex items-center justify-between py-4 px-6 bg-kodev-green dark:bg-kodev-blue text-white"
+  class="header flex items-center justify-between py-4 px-6 bg-kodev-green dark:bg-kodev-blue text-white"
+  style="min-height: 40px; max-height: 70px;"
+  [class.scrolled]="isScrolled"
 >
   <div class="flex items-center space-x-4">
     <a routerLink="/" class="text-xl font-semibold"
       ><img
         src="..\..\..\assets\img\logo.png"
-        alt="Logo"
-        class="my-4 rounded-lg shadow-md max-w-xs h-8"
+        alt="logo"
+        class="object-scale-down h-8 rounded-lg shadow-md max-w-xs"
     /></a>
     <div class="flex space-x-4">
       <a routerLink="/" class="hover:text-gray-300">Home</a>

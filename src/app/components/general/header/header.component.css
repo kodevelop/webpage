@@ -1,3 +1,13 @@
+.header {
+  height: 70px;
+  transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Added transitions for height and opacity */
+}
+
+.header.scrolled {
+  height: 40px;
+  opacity: 0.8;
+}
+
 .switch {
   position: relative;
   display: inline-block;
