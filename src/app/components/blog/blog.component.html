@@ -1,3 +1,9 @@
 <div class="dark:text-white">
-  <p>blog works!</p>
+  <markdown
+    ngPreserveWhitespaces
+    [src]="'content/my-first-post.md'"
+    [srcRelativeLink]="true"
+    (load)="onLoad($event)"
+  (error)="onError($event)">
+  </markdown>
 </div>

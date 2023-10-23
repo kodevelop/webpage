@@ -3,8 +3,13 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.css']
+  styleUrls: ['./blog.component.css'],
 })
 export class BlogComponent {
-
+  onError($event: Error | string) {
+    console.error($event);
+  }
+  onLoad($event: Event | string) {
+    console.log($event);
+  }
 }
