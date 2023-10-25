@@ -1,14 +1,10 @@
 <div class="dark:text-white">
-  <div class="mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="space-y-12">
-      <markdown
-        ngPreserveWhitespaces
-        [src]="'content/my-first-post.md'"
-        [srcRelativeLink]="true"
-        (load)="onLoad($event)"
-        (error)="onError($event)"
-      >
-      </markdown>
+  <div class="pt-8 mx-16">
+    <div markdown ngPreserveWhitespaces
+    [src]="'content/my-first-post.md'"
+    [srcRelativeLink]="true"
+    (load)="onLoad($event)"
+    (error)="onError($event)">
     </div>
   </div>
 </div>

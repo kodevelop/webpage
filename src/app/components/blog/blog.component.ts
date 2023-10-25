@@ -4,7 +4,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   selector: 'app-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css'],
-  encapsulation: ViewEncapsulation.ShadowDom,
+  //encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class BlogComponent {
   onError($event: Error | string) {

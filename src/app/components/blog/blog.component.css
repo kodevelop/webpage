@@ -1,158 +1,143 @@
-markdown {
+:host ::ng-deep {
     text-align: center;
 }
 
 @media print {
-  *,
-  *:before,
-  *:after {
+  :host ::ng-deep *,
+  :host ::ng-deep *:before,
+  :host ::ng-deep *:after {
     background: transparent !important;
     color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
 
-  a,
-  a:visited {
+  :host ::ng-deep a,
+  :host ::ng-deep a:visited {
     text-decoration: underline;
   }
 
-  a[href]:after {
+  :host ::ng-deep a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  abbr[title]:after {
+  :host ::ng-deep abbr[title]:after {
     content: " (" attr(title) ")";
   }
 
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
+  :host ::ng-deep a[href^="#"]:after,
+  :host ::ng-deep a[href^="javascript:"]:after {
     content: "";
   }
 
-  pre,
-  blockquote {
+  :host ::ng-deep pre,
+  :host ::ng-deep blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
 
-  thead {
+  :host ::ng-deep thead {
     display: table-header-group;
   }
 
-  tr,
-  img {
+  :host ::ng-deep tr,
+  :host ::ng-deep img {
     page-break-inside: avoid;
   }
 
-  img {
+  :host ::ng-deep img {
     max-width: 100% !important;
   }
 
-  p,
-  h2,
-  h3 {
+  :host ::ng-deep p,
+  :host ::ng-deep h2,
+  :host ::ng-deep h3 {
     orphans: 3;
     widows: 3;
   }
 
-  h2,
-  h3 {
+  :host ::ng-deep h2,
+  :host ::ng-deep h3 {
     page-break-after: avoid;
   }
 }
 
-p {
+:host ::ng-deep p {
   font-size: 1rem;
   margin-bottom: 1.3rem;
 }
 
-h1,
-h2,
-h3,
-h4 {
+:host ::ng-deep h1,
+:host ::ng-deep h2,
+:host ::ng-deep h3,
+:host ::ng-deep h4 {
   margin: 1.414rem 0 0.5rem;
   font-weight: inherit;
   line-height: 1.42;
 }
 
-h1 {
+:host ::ng-deep h1 {
   margin-top: 0;
   font-size: 3.998rem;
 }
 
-h2 {
+:host ::ng-deep h2 {
   font-size: 2.827rem;
 }
 
-h3 {
+:host ::ng-deep h3 {
   font-size: 1.999rem;
 }
 
-h4 {
+:host ::ng-deep h4 {
   font-size: 1.414rem;
 }
 
-h5 {
+:host ::ng-deep h5 {
   font-size: 1.121rem;
 }
 
-h6 {
+:host ::ng-deep h6 {
   font-size: 0.88rem;
 }
 
-small {
+:host ::ng-deep small {
   font-size: 0.707em;
 }
 
 /* https://github.com/mrmrs/fluidity */
 
-img,
-canvas,
-iframe,
-video,
-svg,
-select,
-textarea {
+:host ::ng-deep img,
+:host ::ng-deep canvas,
+:host ::ng-deep iframe,
+:host ::ng-deep video,
+:host ::ng-deep svg,
+:host ::ng-deep select,
+:host ::ng-deep textarea {
   max-width: 100%;
 }
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,300);
 
-/* body {
-    color: #444;
-    font-family: 'Open Sans', Helvetica, sans-serif;
-    font-weight: 300;
-    margin: 6rem auto 1rem;
-    max-width: 48rem;
-    text-align: center;
-  } */
-
-img {
+  :host ::ng-deep img {
   border-radius: 50%;
   height: 200px;
   margin: 0 auto;
   width: 200px;
 }
 
-a,
-a:visited {
+:host ::ng-deep a,
+:host ::ng-deep a:visited {
   color: #3498db;
 }
 
-a:hover,
-a:focus,
-a:active {
+:host ::ng-deep a:hover,
+:host ::ng-deep a:focus,
+:host ::ng-deep a:active {
   color: #2980b9;
 }
 
-pre {
-  background-color: #fafafa;
-  padding: 1rem;
-  text-align: left;
-}
-
-blockquote {
+:host ::ng-deep blockquote {
   margin: 0;
   border-left: 5px solid #7a7a7a;
   font-style: italic;
@@ -160,12 +145,20 @@ blockquote {
   text-align: left;
 }
 
-ul,
-ol,
-li {
+:host ::ng-deep ul,
+:host ::ng-deep ol,
+:host ::ng-deep li {
   text-align: left;
 }
 
-p {
+:host ::ng-deep ul li {
+  list-style-type: circle;
+}
+
+:host ::ng-deep ol li {
+  list-style-type: decimal;
+}
+
+:host ::ng-deep p {
   color: #777;
 }
