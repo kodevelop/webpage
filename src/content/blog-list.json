@@ -1,0 +1,19 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "My first blog post",
+      "location": "content/blog-post/my-first-post.md"
+    },
+    {
+      "id": 2,
+      "title": "My 2nd blog post",
+      "location": "content/blog-post/my-second-post.md"
+    },
+    {
+      "id": 3,
+      "title": "My third blog post",
+      "location": "content/blog-post/my-third-post.md"
+    }
+  ]
+}
