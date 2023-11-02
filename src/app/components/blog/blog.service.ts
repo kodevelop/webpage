@@ -14,6 +14,7 @@ export class BlogService {
         const blogs =  result.blogs.map((r: any) => ({
           id: r.id,
           title: r.title,
+          slug: r.slug,
           location: r.location,
         }) as Blog);
         return blogs;

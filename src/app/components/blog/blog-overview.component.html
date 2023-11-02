@@ -1,18 +1,4 @@
 <div class="dark:text-white">
-  <div class="pt-8 mx-16">
-
-    <ul>
-      <li *ngFor="let blog of dataSource | async">
-        <!-- TODO: add angular routing to blog-detail -->
-        <a>{{ blog.id }}. {{ blog.title }}</a>
-      </li>
-    </ul>
-
-    <!-- <div markdown ngPreserveWhitespaces
-    [src]="'content/my-first-post.md'"
-    [srcRelativeLink]="true"
-    (load)="onLoad($event)"
-    (error)="onError($event)">
-    </div> -->
-  </div>
+  <app-blog-list [blogPosts]="dataSource" (filter)="onFilterChange($event)"></app-blog-list>
+  <router-outlet></router-outlet>
 </div>

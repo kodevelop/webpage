@@ -11,7 +11,9 @@ import { BlogOverviewComponent } from './components/blog/blog-overview.component
 import { MarkdownModule } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BlogService } from './components/blog/blog.service';
-import { BlogDetailComponent } from './components/blog/blog-detail.component';
+import { BlogDetailComponent } from './components/blog/components/detail/blog-detail.component';
+import { BlogListComponent } from './components/blog/components/list/blog-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,10 +21,12 @@ import { BlogDetailComponent } from './components/blog/blog-detail.component';
     HomeComponent,
     ServicesComponent,
     BlogOverviewComponent,
-    BlogDetailComponent
+    BlogDetailComponent,
+    BlogListComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     GeneralModule,
