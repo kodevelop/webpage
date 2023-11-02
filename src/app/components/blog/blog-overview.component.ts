@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BlogService } from './blog.service';
+import { BlogService } from './services/blog.service';
 import { BehaviorSubject, Observable, map, switchMap } from 'rxjs';
 import { Blog } from './models/blog.models';
 

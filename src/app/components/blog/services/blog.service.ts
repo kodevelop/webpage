@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs/operators';
-import { Blog } from './models/blog.models';
+import { Blog } from '../models/blog.models';
 
 @Injectable()
 export class BlogService {

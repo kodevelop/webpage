@@ -10,7 +10,7 @@ import { ServicesComponent } from './components/services/services.component';
 import { BlogOverviewComponent } from './components/blog/blog-overview.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { BlogService } from './components/blog/blog.service';
+import { BlogService } from './components/blog/services/blog.service';
 import { BlogDetailComponent } from './components/blog/components/detail/blog-detail.component';
 import { BlogListComponent } from './components/blog/components/list/blog-list.component';
 import { FormsModule } from '@angular/forms';
