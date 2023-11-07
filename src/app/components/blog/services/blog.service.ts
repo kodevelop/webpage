@@ -9,13 +9,14 @@ export class BlogService {
   constructor(private readonly http: HttpClient) {}
 
   public getBlogList(): Observable<Blog[]> {
-    return this.http.get<Blog[]>('content/blog-list.json').pipe(
+    return this.http.get<Blog[]>('assets/content/blog-list.json').pipe(
       map((result: any) => {
         const blogs =  result.blogs.map((r: any) => ({
           id: r.id,
           title: r.title,
           slug: r.slug,
           location: r.location,
+          summary: r.summary,
         }) as Blog);
         return blogs;
       })

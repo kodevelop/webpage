@@ -16,7 +16,7 @@ export class BlogDetailComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.sub = this.route.params.subscribe((params) => {
       this.slug = params['slug'];
-      this.blogUrl = `content/blog-posts/${this.slug}.md`;
+      this.blogUrl = `assets/content/blog-posts/${this.slug}.md`;
     });
   }
 

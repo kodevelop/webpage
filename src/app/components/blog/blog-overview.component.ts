@@ -16,7 +16,7 @@ export class BlogOverviewComponent {
       switchMap((filterValue: string) =>
         this.blogService.getBlogList().pipe(
           map((blogs) => {
-            blogs = blogs.filter(x => x.slug.toLowerCase().includes(filterValue, 0));
+            blogs = blogs.filter(x => x.summary.toLowerCase().includes(filterValue, 0));
             return blogs;
           })
         )
