@@ -1,0 +1,13 @@
+<div class="dark:text-white">
+  <app-blog-list
+    [blogPosts]="dataSource"
+    (filter)="onFilterChange($event)"
+  ></app-blog-list>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="space-y-12">
+      <div class="bg-white dark:bg-slate-800 rounded-lg p-8">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

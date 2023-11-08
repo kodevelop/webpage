@@ -1,0 +1,20 @@
+/* Hide scrollbar for Chrome, Safari, and Opera */
+:host ::ng-deep .no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+:host ::ng-deep .no-scrollbar {
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  overflow-x: scroll;  /* Add horizontal scrolling */
+  -webkit-overflow-scrolling: touch;  /* Mobile Safari */
+}
+
+/* Optionally, you can hide the vertical scrollbar as well */
+:host ::ng-deep .no-scrollbar::-webkit-scrollbar-thumb {
+  display: none;
+}
+:host ::ng-deep .no-scrollbar::-webkit-scrollbar-track {
+  display: none;
+}
