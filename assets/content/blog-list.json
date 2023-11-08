@@ -1,0 +1,10 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Introduction to Keycloak",
+      "slug": "intro-to-keycloak",
+      "summary": "In this post we will cover the installation of keyloak using the distribution file on a Windows machine.Extract the zip file to a folder on your machine.bat start\n--proxy edge\n--hostname-strict=false\n--hostname-strict-https=false\n--https-port=443\n--https-certificate-file=C:\\Tools\\keycloak-21.You can download the distribution zip file and extract it.log\"\n--log-file-output=json\n```\n\nThis starts the Keycloak server in a development-ready configuration with HTTPS, hostname validation disabled for development, and logging to file for troubleshooting."
+    }
+  ]
+}
