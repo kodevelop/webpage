@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, Pipe, ViewChild, ElementRef } from '@angular/core';
 import { Blog } from '../../models/blog.models';
-import { Observable, debounceTime } from 'rxjs';
+import { Observable, debounceTime, take, tap } from 'rxjs';
 
 @Component({
   selector: 'app-blog-list',
@@ -10,6 +10,7 @@ import { Observable, debounceTime } from 'rxjs';
 export class BlogListComponent {
   @Input() blogPosts: Observable<Blog[]> = new Observable<Blog[]>();
   @Output() filter = new EventEmitter<string>();
+  @Output() blogChanged = new EventEmitter<string>();
 
   @ViewChild('filterInput') filterInput!: ElementRef;
 
@@ -24,5 +25,10 @@ export class BlogListComponent {
       const filterValue = event.target.value;
       this.filter.emit(filterValue);
     });
+  }
+
+  trackClick(slug: string) {
+    console.log(slug);  
+    this.filter.emit(slug);
   }
 }
