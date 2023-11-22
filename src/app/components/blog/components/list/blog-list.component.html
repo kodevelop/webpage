@@ -6,7 +6,7 @@
       <div
         class="min-w-300px w-300px inline-block bg-white rounded-lg shadow-md p-3 m-2 w-full hover:shadow-lg dark:bg-kodev-blue"
       >
-        <a [routerLink]="['/blog', blog.slug]">
+        <a [routerLink]="['/blog', blog.slug]" (click)="trackClick(blog.slug)">
           <div class="inline-block w-full whitespace-nowrap text-center">
             <span class="dark:text-white">{{ blog.title }}</span>
           </div>
