@@ -1,5 +1,5 @@
 :host ::ng-deep {
-    text-align: center;
+    text-align: left;
 }
 
 @media print {
@@ -74,6 +74,7 @@
   margin: 1.414rem 0 0.5rem;
   font-weight: inherit;
   line-height: 1.42;
+  text-align: center;
 }
 
 :host ::ng-deep h1 {
@@ -146,9 +147,13 @@
 }
 
 :host ::ng-deep ul,
+:host ::ng-deep ul::marker,
 :host ::ng-deep ol,
-:host ::ng-deep li {
-  text-align: left;
+:host ::ng-deep ol::marker,
+:host ::ng-deep li,
+:host ::ng-deep li::marker  
+{
+  text-align: center;
 }
 
 :host ::ng-deep ul li {

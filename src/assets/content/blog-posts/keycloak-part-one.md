@@ -1,8 +1,8 @@
 ![Keycloak logo](https://www.keycloak.org/resources/images/icon.svg)
 
-# Introduction to Keycloak
+# Keycloak part one
 
-## What is keycloak
+## Criteria
 
 Keycloak is an opensource identity and access management tool.
 It allows you to add authentication to applications and secure services with minimum effort.  
