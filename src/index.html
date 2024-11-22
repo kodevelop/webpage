@@ -1,16 +1,198 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>KodevWebpage</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body class="mat-typography bg-kodev-pink dark:bg-slate-900">
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kodevelop</title>
+    <style>
+      :root {
+        --ash-gray: #cacfc3ff;
+        --reseda-green: #5c755aff;
+        --isabelline: #f6f3edff;
+        --reseda-green-2: #637a60ff;
+        --isabelline-2: #f7f4eeff;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: var(--isabelline); /* Light background color */
+        color: var(--reseda-green); /* Text color */
+        margin: 0;
+        padding: 0;
+      }
+      .top-bar {
+        display: flex;
+        align-items: center;
+        background-color: var(--reseda-green);
+        padding: 10px 20px;
+        color: white;
+      }
+      .top-bar img {
+        max-width: 30px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .top-bar h1 {
+        font-size: 1.5em;
+        margin: 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      header {
+        text-align: center;
+        padding: 50px 0;
+      }
+      header img {
+        max-width: 100px;
+        border-radius: 50%;
+      }
+      header h1 {
+        margin: 20px 0 10px;
+        font-size: 2.5em;
+        color: var(--reseda-green); /* Text color */
+      }
+      header p {
+        font-size: 1.2em;
+        color: var(--reseda-green-2); /* Text color */
+      }
+      .section {
+        background-color: var(--isabelline-2); /* Background color */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+      }
+      .section h2 {
+        margin-top: 0;
+        color: var(--reseda-green); /* Text color */
+      }
+      .section p {
+        margin: 10px 0;
+        color: var(--reseda-green-2); /* Text color */
+      }
+      .section a {
+        text-decoration: none;
+      }
+      .social-logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+      .work-experience {
+        list-style: none;
+        padding: 0;
+      }
+      .work-experience li {
+        margin-bottom: 10px;
+        padding-left: 20px;
+        position: relative;
+      }
+      .work-experience li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+        background-color: var(--reseda-green);
+        border-radius: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-bar">
+      <img src="./static/logo.png" alt="Kodevelop Logo" />
+      <h1>Kodevelop</h1>
+    </div>
+    <div class="container">
+      <header>
+        <img src="./static/headshot.png" alt="Logo" />
+        <h1>Jens Malfait</h1>
+        <p>Get in touch with me using the details below</p>
+      </header>
+      <div class="section">
+        <h2>Work Experience</h2>
+        <p>
+          Over 12 years of software development experience with expertise in a
+          wide range of technologies and practices:
+        </p>
+        <br />
+        <ul class="work-experience">
+          <li>
+            <strong>Back-End Development:</strong> ASP.NET, .NET Core, Entity
+            Framework Core, and RESTful APIs
+          </li>
+          <li>
+            <strong>Front-End Development:</strong> Angular, TypeScript,
+            JavaScript
+          </li>
+          <li>
+            <strong>Software Architecture:</strong> Designing scalable, modular
+            systems.
+          </li>
+          <li>
+            <strong>Database Management:</strong> SQL Server, MySQL, and
+            Progress 4GL.
+          </li>
+          <li>
+            <strong>DevOps & Automation:</strong> Extensive experience with
+            GitLab, including automated CI/CD pipelines for efficient and
+            reliable software delivery.
+          </li>
+          <li>
+            <strong>Containerization:</strong> Proficient in Docker for
+            creating, managing, and deploying containerized applications in
+            scalable environments.
+          </li>
+          <li>
+            <strong>Software Documentation:</strong> Skilled in creating clear,
+            maintainable documentation for codebases and system designs,
+            ensuring accessibility for developers and stakeholders.
+          </li>
+        </ul>
+      </div>
+      <div class="section">
+        <h2>Contact Information</h2>
+        <p><strong>Phone:</strong> +32472740069</p>
+        <p><strong>Email:</strong> jens.malfait@kodevelop.be</p>
+        <p><strong>Address:</strong> Sint-Antoniusstraat 10, Izegem, Belgium</p>
+        <p>
+          <a
+            href="https://www.linkedin.com/in/jens-malfait-55916a64"
+            target="_blank"
+          >
+            <svg viewBox="0 0 48 48" alt="LinkedIn Logo" class="social-logo">
+              <circle cx="24" cy="24" r="20" fill="#0077B5" />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M18.7747 14.2839C18.7747 15.529 17.8267 16.5366 16.3442 16.5366C14.9194 16.5366 13.9713 15.529 14.0007 14.2839C13.9713 12.9783 14.9193 12 16.3726 12C17.8267 12 18.7463 12.9783 18.7747 14.2839ZM14.1199 32.8191V18.3162H18.6271V32.8181H14.1199V32.8191Z"
+                fill="white"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M22.2393 22.9446C22.2393 21.1357 22.1797 19.5935 22.1201 18.3182H26.0351L26.2432 20.305H26.3322C26.9254 19.3854 28.4079 17.9927 30.8101 17.9927C33.7752 17.9927 35.9995 19.9502 35.9995 24.219V32.821H31.4922V24.7838C31.4922 22.9144 30.8404 21.6399 29.2093 21.6399C27.9633 21.6399 27.2224 22.4999 26.9263 23.3297C26.8071 23.6268 26.7484 24.0412 26.7484 24.4574V32.821H22.2411V22.9446H22.2393Z"
+                fill="white"
+              />
+            </svg>
+          </a>
+          <a href="https://github.com/kodevelop" target="_blank">
+            <svg viewBox="-2 -2 24 24" alt="Github Logo" class="social-logo">
+              <path
+                d="M8.18 15.008c.12 0 .211-.004.271-.012a.317.317 0 0 0 .18-.107c.06-.063.09-.154.09-.274l-.004-.557c-.003-.355-.004-.637-.004-.844l-.188.033a2.41 2.41 0 0 1-.455.028 3.498 3.498 0 0 1-.57-.057 1.276 1.276 0 0 1-.548-.246 1.04 1.04 0 0 1-.36-.503l-.082-.189a2.046 2.046 0 0 0-.258-.417.989.989 0 0 0-.357-.312l-.057-.04a.602.602 0 0 1-.106-.1.455.455 0 0 1-.074-.114c-.016-.038-.003-.07.04-.094a.533.533 0 0 1 .238-.037l.164.025c.11.021.245.087.406.196.16.11.293.251.397.426.126.224.277.395.455.512a.964.964 0 0 0 .536.176c.18 0 .336-.013.467-.04a1.63 1.63 0 0 0 .369-.124c.049-.365.182-.647.4-.843a5.61 5.61 0 0 1-.839-.148 3.346 3.346 0 0 1-.77-.32 2.204 2.204 0 0 1-.66-.548c-.174-.219-.317-.505-.43-.86a4.09 4.09 0 0 1-.167-1.229c0-.66.216-1.223.647-1.687-.202-.497-.183-1.054.057-1.671.159-.05.394-.013.705.11.311.123.54.228.684.316.145.087.26.16.348.22a5.814 5.814 0 0 1 1.573-.212c.54 0 1.065.07 1.573.213l.31-.197c.214-.13.465-.251.754-.36.29-.11.511-.14.664-.09.246.617.268 1.174.065 1.67.432.465.648 1.027.648 1.688 0 .464-.056.875-.168 1.233-.112.358-.257.644-.434.86a2.29 2.29 0 0 1-.664.545 3.342 3.342 0 0 1-.77.32 5.605 5.605 0 0 1-.84.147c.284.245.426.633.426 1.163v1.957c0 .093.014.168.041.226a.226.226 0 0 0 .131.119c.06.021.114.035.16.04.047.006.113.009.2.009h-1.966-2.227z"
+              />
+              <path
+                d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0 2C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10z"
+              />
+            </svg>
+          </a>
+        </p>
+      </div>
+    </div>
+  </body>
 </html>
