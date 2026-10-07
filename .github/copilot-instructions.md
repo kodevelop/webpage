@@ -16,5 +16,5 @@ The language selector renders content from the `translations` object in `src/ind
 
 - Keep the four locale entries in `translations` aligned: each should provide the same content fields, including the expertise and project lists. Keep their language codes in sync with the selector options.
 - Expertise and project entries intentionally contain HTML (for example, `<strong>` and links) and are rendered with `innerHTML`; ordinary translated text is assigned with `textContent`. Preserve this distinction when editing content.
-- Reference page images with paths relative to `src/index.html`, such as `./static/logo.png`.
+- Reference page images with paths relative to `src/index.html`, such as `./static/kodevelop-logo-horizontal.png`.
 - `.editorconfig` sets UTF-8, two-space indentation, a final newline, and trimmed trailing whitespace. Markdown files do not trim trailing whitespace and have no configured line-length limit.
