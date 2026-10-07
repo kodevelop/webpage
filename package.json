@@ -1,0 +1,13 @@
+{
+  "name": "kodevelop-webpage",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.js",
+    "validate": "node scripts/build.js --validate-only",
+    "test": "node --test",
+    "start": "node scripts/serve.js"
+  },
+  "dependencies": {
+    "js-yaml": "4.1.0"
+  }
+}

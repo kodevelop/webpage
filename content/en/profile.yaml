@@ -1,0 +1,40 @@
+name: Jens Malfait
+headline: Freelance Full Stack Developer · Software Architect · DevOps Engineer
+profileTitle: Professional Profile
+profileText: >-
+  I’m a freelance software developer based in Izegem, Belgium, with 12+ years
+  of experience creating reliable digital products for a wide range of business
+  needs. I work across full-stack development, backend systems, databases,
+  architecture, and automation to help teams build and scale applications with
+  confidence.
+expertiseTitle: Core Expertise
+expertiseIntro: >-
+  My work combines practical engineering with scalable design and maintainable
+  delivery:
+expertiseLabelSuffix: ":"
+expertise:
+  - label: Back-End Development
+    description: ASP.NET, .NET Core, Entity Framework Core, REST APIs, and secure application architecture.
+  - label: Front-End Development
+    description: Angular, TypeScript, and JavaScript for responsive, user-focused interfaces.
+  - label: Software Architecture
+    description: Designing modular, scalable solutions that support long-term maintainability.
+  - label: Database Management
+    description: SQL Server, MySQL, and Progress 4GL for robust data-driven applications.
+  - label: DevOps & Automation
+    description: Experience with GitLab CI/CD, automated pipelines, and streamlined release processes.
+  - label: Containerization
+    description: Docker-based workflows for deployment consistency and scalable environments.
+  - label: Documentation
+    description: Creating clear technical documentation and system guidance for teams and stakeholders.
+projectsTitle: Selected Projects
+projectsIntro: Representative work from recent years with product teams and business clients.
+projectCompanyPrefix: for
+contactTitle: Contact
+roleLabel: "Current Role:"
+roleValue: Freelance Full Stack Developer at Kodevelop
+educationLabel: "Education:"
+educationValue: Bachelor in Electronics and ICT
+locationLabel: "Location:"
+locationValue: Izegem, Belgium
+contactMessage: For direct inquiries, please use my LinkedIn profile.

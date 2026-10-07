@@ -261,45 +261,33 @@
     <div class="container">
       <header class="profile-header">
         <img src="./static/headshot.png" alt="Portrait of Jens Malfait" />
-        <h1 id="profile-name">Jens Malfait</h1>
-        <p id="profile-headline">Freelance Full Stack Developer · Software Architect · DevOps Engineer</p>
+        <h1 id="profile-name"></h1>
+        <p id="profile-headline"></p>
       </header>
 
       <div class="section">
-        <h2 id="profile-title">Professional Profile</h2>
-        <p id="profile-text">
-          I’m a freelance software developer based in Izegem, Belgium, with
-          12+ years of experience creating reliable digital products for a wide
-          range of business needs. I work across full-stack development,
-          backend systems, databases, architecture, and automation to help teams
-          build and scale applications with confidence.
-        </p>
+        <h2 id="profile-title"></h2>
+        <p id="profile-text"></p>
       </div>
 
       <div class="section">
-        <h2 id="expertise-title">Core Expertise</h2>
-        <p id="expertise-intro">
-          My work combines practical engineering with scalable design and
-          maintainable delivery:
-        </p>
+        <h2 id="expertise-title"></h2>
+        <p id="expertise-intro"></p>
         <ul class="work-experience" id="expertise-list"></ul>
       </div>
 
       <div class="section">
-        <h2 id="projects-title">Selected Projects</h2>
-        <p id="projects-intro">
-          Across the years, I have built and modernized software for business-critical workflows,
-          data-heavy systems, and customer-facing applications.
-        </p>
+        <h2 id="projects-title"></h2>
+        <p id="projects-intro"></p>
         <ul class="project-list" id="projects-list"></ul>
       </div>
 
       <div class="section">
-        <h2 id="contact-title">Contact</h2>
-        <p><strong id="role-label">Current Role:</strong> <span id="role-value">Freelance Full Stack Developer at Kodevelop</span></p>
-        <p><strong id="education-label">Education:</strong> <span id="education-value">Bachelor in Electronics and ICT</span></p>
-        <p><strong id="location-label">Location:</strong> <span id="location-value">Izegem, Belgium</span></p>
-        <p id="contact-message">For direct inquiries, please use my LinkedIn profile.</p>
+        <h2 id="contact-title"></h2>
+        <p><strong id="role-label"></strong> <span id="role-value"></span></p>
+        <p><strong id="education-label"></strong> <span id="education-value"></span></p>
+        <p><strong id="location-label"></strong> <span id="location-value"></span></p>
+        <p id="contact-message"></p>
         <p>
           <a href="https://www.linkedin.com/in/jens-malfait-55916a64" target="_blank" rel="noreferrer">
             <svg viewBox="0 0 48 48" alt="LinkedIn Logo" class="social-logo">
@@ -336,140 +324,7 @@
     </footer>
 
     <script>
-      const translations = {
-        en: {
-          name: 'Jens Malfait',
-          headline: 'Freelance Full Stack Developer · Software Architect · DevOps Engineer',
-          profileTitle: 'Professional Profile',
-          profileText: 'I’m a freelance software developer based in Izegem, Belgium, with 12+ years of experience creating reliable digital products for a wide range of business needs. I work across full-stack development, backend systems, databases, architecture, and automation to help teams build and scale applications with confidence.',
-          expertiseTitle: 'Core Expertise',
-          expertiseIntro: 'My work combines practical engineering with scalable design and maintainable delivery:',
-          expertise: [
-            '<strong>Back-End Development:</strong> ASP.NET, .NET Core, Entity Framework Core, REST APIs, and secure application architecture.',
-            '<strong>Front-End Development:</strong> Angular, TypeScript, and JavaScript for responsive, user-focused interfaces.',
-            '<strong>Software Architecture:</strong> Designing modular, scalable solutions that support long-term maintainability.',
-            '<strong>Database Management:</strong> SQL Server, MySQL, and Progress 4GL for robust data-driven applications.',
-            '<strong>DevOps &amp; Automation:</strong> Experience with GitLab CI/CD, automated pipelines, and streamlined release processes.',
-            '<strong>Containerization:</strong> Docker-based workflows for deployment consistency and scalable environments.',
-            '<strong>Documentation:</strong> Creating clear technical documentation and system guidance for teams and stakeholders.'
-          ],
-          projectsTitle: 'Selected Projects',
-          projectsIntro: 'Representative work from recent years with product teams and business clients:',
-          projects: [
-            '<a class="project-link" href="https://acm-tt.trustteam.be/" target="_blank" rel="noreferrer">Accident Manager</a> — Built for the Belgian insurance market to streamline communication between victims and insurers, reducing paper trails, incomplete files, and administrative delays. The platform supports a more structured claims process and is used by insurance companies to improve the flow of information and case handling for <a class="company-link" href="https://www.trustteam.be/" target="_blank" rel="noreferrer">Trustteam</a>.',
-            '<a class="project-link" href="https://www.agoria.be/xy-tool/nl" target="_blank" rel="noreferrer">XY-Tool</a> — Designed to support the Belgian social election process for companies with more than 50 employees. The tool guides organizations through the rigid step-by-step process of organizing elections, helping them stay compliant and organized throughout the process for <a class="company-link" href="https://www.agoria.be/" target="_blank" rel="noreferrer">Agoria</a>.',
-            '<a class="project-link" href="https://app.flexyoo.be/login?lang=nl" target="_blank" rel="noreferrer">Flexyoo</a> — A flexible payroll and benefits platform that helps companies offer employees extra legal benefits in a way that creates a net positive impact for both employees and employers. The solution supports employee choice, payroll flexibility, and a more engaging benefits experience for <a class="company-link" href="https://www.trustteam.be/" target="_blank" rel="noreferrer">Trustteam</a>.',
-            '<a class="project-link" href="https://www.turnup.world/nl/nl-platform/" target="_blank" rel="noreferrer">TurnUp</a> — A customer-facing platform focused on reducing no-shows by following up with potential customers, nudging them toward action, and helping teams fill empty slots quickly when someone does not show up. It improves conversion and operational efficiency for <a class="company-link" href="https://www.turnup.world/" target="_blank" rel="noreferrer">TurnUp World</a>.'
-          ],
-          contactTitle: 'Contact',
-          roleLabel: 'Current Role:',
-          roleValue: 'Freelance Full Stack Developer at Kodevelop',
-          educationLabel: 'Education:',
-          educationValue: 'Bachelor in Electronics and ICT',
-          locationLabel: 'Location:',
-          locationValue: 'Izegem, Belgium',
-          contactMessage: 'For direct inquiries, please use my LinkedIn profile.'
-        },
-        nl: {
-          name: 'Jens Malfait',
-          headline: 'Freelance Full Stack Developer · Software Architect · DevOps Engineer',
-          profileTitle: 'Professioneel profiel',
-          profileText: 'Ik ben een freelance softwareontwikkelaar uit Izegem, België, met meer dan 12 jaar ervaring in het bouwen van betrouwbare digitale producten voor een breed scala aan bedrijfsbehoeften. Ik werk aan full-stack ontwikkeling, back-end systemen, databases, architectuur en automatisering om teams te helpen applicaties veilig en schaalbaar op te bouwen.',
-          expertiseTitle: 'Kernexpertise',
-          expertiseIntro: 'Mijn werk combineert praktische engineering met schaalbare ontwerpen en onderhoudbare implementaties:',
-          expertise: [
-            '<strong>Back-End ontwikkeling:</strong> ASP.NET, .NET Core, Entity Framework Core, REST API\'s en veilige applicatie-architectuur.',
-            '<strong>Front-End ontwikkeling:</strong> Angular, TypeScript en JavaScript voor responsieve, gebruiksvriendelijke interfaces.',
-            '<strong>Software-architectuur:</strong> Ontwerpen van modulaire, schaalbare oplossingen die duurzame onderhoudbaarheid ondersteunen.',
-            '<strong>Databasebeheer:</strong> SQL Server, MySQL en Progress 4GL voor robuuste, data-gedreven applicaties.',
-            '<strong>DevOps &amp; automatisering:</strong> Ervaring met GitLab CI/CD, geautomatiseerde pipelines en gestroomlijnde releaseprocessen.',
-            '<strong>Containerisatie:</strong> Docker-gebaseerde workflows voor consistente deployment en schaalbare omgevingen.',
-            '<strong>Documentatie:</strong> Het opstellen van duidelijke technische documentatie en systeemgidsen voor teams en stakeholders.'
-          ],
-          projectsTitle: 'Geselecteerde projecten',
-          projectsIntro: 'Representatief werk uit recente jaren in samenwerking met productteams en zakelijke klanten:',
-          projects: [
-            '<a class="project-link" href="https://acm-tt.trustteam.be/" target="_blank" rel="noreferrer">Accident Manager</a> — Ontwikkeld voor de Belgische verzekeringsmarkt om de communicatie tussen het slachtoffer en de verzekeraar te stroomlijnen. Het verkleint papierwerk, ontbrekende informatie en administratieve vertragingen, waardoor claims efficiënter en beter gestructureerd kunnen worden afgehandeld voor <a class="company-link" href="https://www.trustteam.be/" target="_blank" rel="noreferrer">Trustteam</a>.',
-            '<a class="project-link" href="https://www.agoria.be/xy-tool/nl" target="_blank" rel="noreferrer">XY-Tool</a> — Gebruik voor het organiseren van de Belgische sociale verkiezingen in bedrijven met meer dan 50 werknemers. De tool begeleidt organisaties stap voor stap door het strikte proces van het organiseren van de verkiezingen, zodat ze compliant en gestructureerd blijven voor <a class="company-link" href="https://www.agoria.be/" target="_blank" rel="noreferrer">Agoria</a>.',
-            '<a class="project-link" href="https://app.flexyoo.be/login?lang=nl" target="_blank" rel="noreferrer">Flexyoo</a> — Een flexibel payroll- en voordelenplatform dat bedrijven helpt om extra wettelijke voordelen aan te bieden. Dit geeft medewerkers meer keuze en levert zowel voor werknemers als werkgevers een positief netto effect op voor <a class="company-link" href="https://www.trustteam.be/" target="_blank" rel="noreferrer">Trustteam</a>.',
-            '<a class="project-link" href="https://www.turnup.world/nl/nl-platform/" target="_blank" rel="noreferrer">TurnUp</a> — Een platform voor klantgerichte bedrijven om het percentage no-shows te verminderen. Het stuurt potentiële klanten op een gerichte manier aan, volgt afwezigen op en probeert open plekken snel opnieuw te vullen wanneer iemand niet verschijnt voor <a class="company-link" href="https://www.turnup.world/" target="_blank" rel="noreferrer">TurnUp World</a>.'
-          ],
-          contactTitle: 'Contact',
-          roleLabel: 'Huidige functie:',
-          roleValue: 'Freelance Full Stack Developer bij Kodevelop',
-          educationLabel: 'Opleiding:',
-          educationValue: 'Bachelor in Elektronica en ICT',
-          locationLabel: 'Locatie:',
-          locationValue: 'Izegem, België',
-          contactMessage: 'Voor directe vragen kunt u mijn LinkedIn-profiel gebruiken.'
-        },
-        fr: {
-          name: 'Jens Malfait',
-          headline: 'Développeur Full Stack Freelance · Architecte Logiciel · DevOps',
-          profileTitle: 'Profil professionnel',
-          profileText: 'Je suis un développeur logiciel freelance basé à Izegem, en Belgique, avec plus de 12 ans d\'expérience dans la création de produits numériques fiables pour un large éventail de besoins professionnels. Je travaille sur le développement full stack, les systèmes backend, les bases de données, l\'architecture et l\'automatisation afin d\'aider les équipes à concevoir des applications robustes et évolutives.',
-          expertiseTitle: 'Expertises clés',
-          expertiseIntro: 'Mon travail associe ingénierie concrète, conception évolutive et mise en œuvre maintenable :',
-          expertise: [
-            '<strong>Développement back-end :</strong> ASP.NET, .NET Core, Entity Framework Core, API REST et architecture applicative sécurisée.',
-            '<strong>Développement front-end :</strong> Angular, TypeScript et JavaScript pour des interfaces réactives et centrées sur l\'utilisateur.',
-            '<strong>Architecture logicielle :</strong> Conception de solutions modulaires et évolutives, pensées pour une maintenance durable.',
-            '<strong>Gestion de bases de données :</strong> SQL Server, MySQL et Progress 4GL pour des applications solides et orientées données.',
-            '<strong>DevOps &amp; automatisation :</strong> Expérience avec GitLab CI/CD, pipelines automatisés et processus de mise en production rationalisés.',
-            '<strong>Conteneurisation :</strong> Flux de travail basés sur Docker pour des déploiements cohérents et des environnements évolutifs.',
-            '<strong>Documentation :</strong> Rédaction de documentation technique claire et de guides système pour les équipes et les parties prenantes.'
-          ],
-          projectsTitle: 'Projets sélectionnés',
-          projectsIntro: 'Des réalisations représentatives des dernières années en collaboration avec des équipes produit et des clients professionnels :',
-          projects: [
-            '<a class="project-link" href="https://acm-tt.trustteam.be/" target="_blank" rel="noreferrer">Accident Manager</a> — Conçu pour le marché belge de l\'assurance afin de fluidifier la communication entre la victime et l\'assureur. La solution réduit le papier, les informations manquantes et les retards administratifs, ce qui permet un traitement plus structuré des dossiers pour <a class="company-link" href="https://www.trustteam.be/" target="_blank" rel="noreferrer">Trustteam</a>.',
-            '<a class="project-link" href="https://www.agoria.be/xy-tool/nl" target="_blank" rel="noreferrer">XY-Tool</a> — Outil utilisé pour organiser les élections sociales belges dans les entreprises de plus de 50 salariés. Il accompagne les organisations dans la mise en œuvre rigoureuse et étape par étape du processus électoral afin d\'assurer conformité et organisation pour <a class="company-link" href="https://www.agoria.be/" target="_blank" rel="noreferrer">Agoria</a>.',
-            '<a class="project-link" href="https://app.flexyoo.be/login?lang=nl" target="_blank" rel="noreferrer">Flexyoo</a> — Une solution de paie et d\'avantages flexible qui aide les entreprises à proposer des avantages légaux complémentaires. Cela offre plus de choix aux salariés et crée un impact positif net à la fois pour les employés et les employeurs pour <a class="company-link" href="https://www.trustteam.be/" target="_blank" rel="noreferrer">Trustteam</a>.',
-            '<a class="project-link" href="https://www.turnup.world/nl/nl-platform/" target="_blank" rel="noreferrer">TurnUp</a> — Une plateforme orientée client permettant de réduire le taux de no-show. Elle suit les clients potentiels, les incite à agir et aide les équipes à combler rapidement une place vacante lorsqu\'une personne ne se présente pas pour <a class="company-link" href="https://www.turnup.world/" target="_blank" rel="noreferrer">TurnUp World</a>.'
-          ],
-          contactTitle: 'Contact',
-          roleLabel: 'Poste actuel :',
-          roleValue: 'Développeur Full Stack Freelance chez Kodevelop',
-          educationLabel: 'Formation :',
-          educationValue: 'Bachelor en Électronique et TIC',
-          locationLabel: 'Localisation :',
-          locationValue: 'Izegem, Belgique',
-          contactMessage: 'Pour toute demande directe, veuillez utiliser mon profil LinkedIn.'
-        },
-        de: {
-          name: 'Jens Malfait',
-          headline: 'Freiberuflicher Full-Stack-Entwickler · Softwarearchitekt · DevOps Engineer',
-          profileTitle: 'Berufsprofil',
-          profileText: 'Ich bin ein freiberuflicher Softwareentwickler aus Izegem, Belgien, mit über 12 Jahren Erfahrung in der Entwicklung zuverlässiger digitaler Produkte für ein breites Spektrum an Geschäftsanforderungen. Ich arbeite an Full-Stack-Entwicklung, Backend-Systemen, Datenbanken, Architektur und Automatisierung, um Teams dabei zu unterstützen, Anwendungen sicher und skalierbar aufzubauen.',
-          expertiseTitle: 'Kernkompetenzen',
-          expertiseIntro: 'Meine Arbeit verbindet praktisches Engineering mit skalierbarer Gestaltung und wartbarer Umsetzung:',
-          expertise: [
-            '<strong>Back-End-Entwicklung:</strong> ASP.NET, .NET Core, Entity Framework Core, REST-APIs und sichere Anwendungsarchitektur.',
-            '<strong>Front-End-Entwicklung:</strong> Angular, TypeScript und JavaScript für responsive, nutzerorientierte Oberflächen.',
-            '<strong>Softwarearchitektur:</strong> Entwurf modularer, skalierbarer Lösungen mit Fokus auf langfristige Wartbarkeit.',
-            '<strong>Datenbankmanagement:</strong> SQL Server, MySQL und Progress 4GL für robuste, datengetriebene Anwendungen.',
-            '<strong>DevOps &amp; Automatisierung:</strong> Erfahrung mit GitLab CI/CD, automatisierten Pipelines und optimierten Release-Prozessen.',
-            '<strong>Containerisierung:</strong> Docker-basierte Workflows für konsistente Bereitstellungen und skalierbare Umgebungen.',
-            '<strong>Dokumentation:</strong> Erstellung klarer technischer Dokumentation und Systemanleitungen für Teams und Stakeholder.'
-          ],
-          projectsTitle: 'Ausgewählte Projekte',
-          projectsIntro: 'Repräsentative Arbeiten aus den letzten Jahren in Zusammenarbeit mit Produktteams und Geschäftskunden:',
-          projects: [
-            '<a class="project-link" href="https://acm-tt.trustteam.be/" target="_blank" rel="noreferrer">Accident Manager</a> — Für den belgischen Versicherungsmarkt entwickelt, um die Kommunikation zwischen Opfer und Versicherer zu vereinfachen. Die Lösung reduziert Papierkram, fehlende Informationen und verwaltungstechnische Verzögerungen und verbessert so den Ablauf von Schadensfällen für <a class="company-link" href="https://www.trustteam.be/" target="_blank" rel="noreferrer">Trustteam</a>.',
-            '<a class="project-link" href="https://www.agoria.be/xy-tool/nl" target="_blank" rel="noreferrer">XY-Tool</a> — Wird für die Organisation der belgischen sozialen Wahlen in Unternehmen mit mehr als 50 Mitarbeitenden eingesetzt. Das Tool begleitet Unternehmen Schritt für Schritt durch den strengen Ablauf der Wahlvorbereitung und sorgt so für Compliance und Struktur für <a class="company-link" href="https://www.agoria.be/" target="_blank" rel="noreferrer">Agoria</a>.',
-            '<a class="project-link" href="https://app.flexyoo.be/login?lang=nl" target="_blank" rel="noreferrer">Flexyoo</a> — Eine flexible Lohn- und Benefits-Plattform, die Unternehmen hilft, zusätzliche gesetzliche Vorteile anzubieten. Dadurch erhalten Mitarbeitende mehr Wahlmöglichkeiten und beide Seiten profitieren davon, sowohl Arbeitnehmer als auch Arbeitgeber, für <a class="company-link" href="https://www.trustteam.be/" target="_blank" rel="noreferrer">Trustteam</a>.',
-            '<a class="project-link" href="https://www.turnup.world/nl/nl-platform/" target="_blank" rel="noreferrer">TurnUp</a> — Eine kundenorientierte Plattform zur Reduzierung von No-Shows. Sie verfolgt potenzielle Kunden, gibt gezielte Nachfassaktionen und hilft dabei, freie Plätze schnell wieder zu besetzen, wenn jemand nicht erscheint, für <a class="company-link" href="https://www.turnup.world/" target="_blank" rel="noreferrer">TurnUp World</a>.'
-          ],
-          contactTitle: 'Kontakt',
-          roleLabel: 'Aktuelle Position:',
-          roleValue: 'Freiberuflicher Full-Stack-Entwickler bei Kodevelop',
-          educationLabel: 'Ausbildung:',
-          educationValue: 'Bachelor in Elektronik und ICT',
-          locationLabel: 'Standort:',
-          locationValue: 'Izegem, Belgien',
-          contactMessage: 'Für direkte Anfragen nutzen Sie bitte mein LinkedIn-Profil.'
-        }
-      };
+      const translations = __SITE_CONTENT__;
 
       const elements = {
         name: document.getElementById('profile-name'),
@@ -492,12 +347,47 @@
         contactMessage: document.getElementById('contact-message')
       };
 
+      const languageSelect = document.getElementById('language-select');
+
+      function createLink(text, url, className) {
+        const link = document.createElement('a');
+        link.className = className;
+        link.href = url;
+        link.target = '_blank';
+        link.rel = 'noreferrer';
+        link.textContent = text;
+        return link;
+      }
+
+      function renderExpertise(items, labelSuffix) {
+        elements.expertiseList.replaceChildren(...items.map((item) => {
+          const listItem = document.createElement('li');
+          const label = document.createElement('strong');
+          label.textContent = item.label + labelSuffix;
+          listItem.append(label, document.createTextNode(' ' + item.description));
+          return listItem;
+        }));
+      }
+
+      function renderProjects(projects, companyPrefix) {
+        elements.projectsList.replaceChildren(...projects.map((project) => {
+          const listItem = document.createElement('li');
+          listItem.append(
+            createLink(project.title, project.url, 'project-link'),
+            document.createTextNode(' — ' + project.description + ' ' + companyPrefix + ' '),
+            createLink(project.company, project.companyUrl, 'company-link'),
+            document.createTextNode('.')
+          );
+          return listItem;
+        }));
+      }
+
       function render(lang) {
         const content = translations[lang];
         if (!content) return;
 
         document.documentElement.lang = lang;
-        document.title = 'Jens Malfait | ' + content.headline.split('·')[0].trim();
+        document.title = content.name + ' | ' + content.headline.split('·')[0].trim();
 
         elements.name.textContent = content.name;
         elements.headline.textContent = content.headline;
@@ -505,10 +395,10 @@
         elements.profileText.textContent = content.profileText;
         elements.expertiseTitle.textContent = content.expertiseTitle;
         elements.expertiseIntro.textContent = content.expertiseIntro;
-        elements.expertiseList.innerHTML = content.expertise.map((item) => '<li>' + item + '</li>').join('');
+        renderExpertise(content.expertise, content.expertiseLabelSuffix);
         elements.projectsTitle.textContent = content.projectsTitle;
         elements.projectsIntro.textContent = content.projectsIntro;
-        elements.projectsList.innerHTML = content.projects.map((item) => '<li>' + item + '</li>').join('');
+        renderProjects(content.projects, content.projectCompanyPrefix);
         elements.contactTitle.textContent = content.contactTitle;
         elements.roleLabel.textContent = content.roleLabel;
         elements.roleValue.textContent = content.roleValue;
@@ -517,11 +407,8 @@
         elements.locationLabel.textContent = content.locationLabel;
         elements.locationValue.textContent = content.locationValue;
         elements.contactMessage.textContent = content.contactMessage;
-
         languageSelect.value = lang;
       }
-
-      const languageSelect = document.getElementById('language-select');
 
       function detectBrowserLanguage() {
         const browserLanguage =
@@ -535,7 +422,7 @@
       }
 
       const savedLanguage = localStorage.getItem('kde-language');
-      const initialLanguage = savedLanguage || detectBrowserLanguage();
+      const initialLanguage = translations[savedLanguage] ? savedLanguage : detectBrowserLanguage();
       render(initialLanguage);
 
       languageSelect.addEventListener('change', (event) => {

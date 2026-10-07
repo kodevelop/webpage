@@ -1,0 +1,43 @@
+name: Jens Malfait
+headline: Freiberuflicher Full-Stack-Entwickler · Softwarearchitekt · DevOps Engineer
+profileTitle: Berufsprofil
+profileText: >-
+  Ich bin ein freiberuflicher Softwareentwickler aus Izegem, Belgien, mit über
+  12 Jahren Erfahrung in der Entwicklung zuverlässiger digitaler Produkte für
+  ein breites Spektrum an Geschäftsanforderungen. Ich arbeite an
+  Full-Stack-Entwicklung, Backend-Systemen, Datenbanken, Architektur und
+  Automatisierung, um Teams dabei zu unterstützen, Anwendungen sicher und
+  skalierbar aufzubauen.
+expertiseTitle: Kernkompetenzen
+expertiseIntro: >-
+  Meine Arbeit verbindet praktisches Engineering mit skalierbarer Gestaltung
+  und wartbarer Umsetzung:
+expertiseLabelSuffix: ":"
+expertise:
+  - label: Back-End-Entwicklung
+    description: ASP.NET, .NET Core, Entity Framework Core, REST-APIs und sichere Anwendungsarchitektur.
+  - label: Front-End-Entwicklung
+    description: Angular, TypeScript und JavaScript für responsive, nutzerorientierte Oberflächen.
+  - label: Softwarearchitektur
+    description: Entwurf modularer, skalierbarer Lösungen mit Fokus auf langfristige Wartbarkeit.
+  - label: Datenbankmanagement
+    description: SQL Server, MySQL und Progress 4GL für robuste, datengetriebene Anwendungen.
+  - label: DevOps & Automatisierung
+    description: Erfahrung mit GitLab CI/CD, automatisierten Pipelines und optimierten Release-Prozessen.
+  - label: Containerisierung
+    description: Docker-basierte Workflows für konsistente Bereitstellungen und skalierbare Umgebungen.
+  - label: Dokumentation
+    description: Erstellung klarer technischer Dokumentation und Systemanleitungen für Teams und Stakeholder.
+projectsTitle: Ausgewählte Projekte
+projectsIntro: >-
+  Repräsentative Arbeiten aus den letzten Jahren in Zusammenarbeit mit
+  Produktteams und Geschäftskunden:
+projectCompanyPrefix: für
+contactTitle: Kontakt
+roleLabel: "Aktuelle Position:"
+roleValue: Freiberuflicher Full-Stack-Entwickler bei Kodevelop
+educationLabel: "Ausbildung:"
+educationValue: Bachelor in Elektronik und ICT
+locationLabel: "Standort:"
+locationValue: Izegem, Belgien
+contactMessage: Für direkte Anfragen nutzen Sie bitte mein LinkedIn-Profil.

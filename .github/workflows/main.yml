@@ -5,17 +5,35 @@ on:
     branches:
     - main
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22
+        cache: npm
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Test content and build logic
+      run: npm test
+
+    - name: Build
+      run: npm run build
 
     - name: Deploy
       if: success()
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: src
+        publish_dir: dist
         cname: kodevelop.be

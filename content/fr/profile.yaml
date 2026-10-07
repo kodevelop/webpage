@@ -1,0 +1,43 @@
+name: Jens Malfait
+headline: Développeur Full Stack Freelance · Architecte Logiciel · DevOps
+profileTitle: Profil professionnel
+profileText: >-
+  Je suis un développeur logiciel freelance basé à Izegem, en Belgique, avec
+  plus de 12 ans d'expérience dans la création de produits numériques fiables
+  pour un large éventail de besoins professionnels. Je travaille sur le
+  développement full stack, les systèmes backend, les bases de données,
+  l'architecture et l'automatisation afin d'aider les équipes à concevoir des
+  applications robustes et évolutives.
+expertiseTitle: Expertises clés
+expertiseIntro: >-
+  Mon travail associe ingénierie concrète, conception évolutive et mise en
+  œuvre maintenable :
+expertiseLabelSuffix: " :"
+expertise:
+  - label: Développement back-end
+    description: ASP.NET, .NET Core, Entity Framework Core, API REST et architecture applicative sécurisée.
+  - label: Développement front-end
+    description: Angular, TypeScript et JavaScript pour des interfaces réactives et centrées sur l'utilisateur.
+  - label: Architecture logicielle
+    description: Conception de solutions modulaires et évolutives, pensées pour une maintenance durable.
+  - label: Gestion de bases de données
+    description: SQL Server, MySQL et Progress 4GL pour des applications solides et orientées données.
+  - label: DevOps & automatisation
+    description: Expérience avec GitLab CI/CD, pipelines automatisés et processus de mise en production rationalisés.
+  - label: Conteneurisation
+    description: Flux de travail basés sur Docker pour des déploiements cohérents et des environnements évolutifs.
+  - label: Documentation
+    description: Rédaction de documentation technique claire et de guides système pour les équipes et les parties prenantes.
+projectsTitle: Projets sélectionnés
+projectsIntro: >-
+  Des réalisations représentatives des dernières années en collaboration avec
+  des équipes produit et des clients professionnels :
+projectCompanyPrefix: pour
+contactTitle: Contact
+roleLabel: "Poste actuel :"
+roleValue: Développeur Full Stack Freelance chez Kodevelop
+educationLabel: "Formation :"
+educationValue: Bachelor en Électronique et TIC
+locationLabel: "Localisation :"
+locationValue: Izegem, Belgique
+contactMessage: Pour toute demande directe, veuillez utiliser mon profil LinkedIn.

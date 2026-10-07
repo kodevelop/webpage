@@ -1,0 +1,40 @@
+name: Jens Malfait
+headline: Freelance Full Stack Developer · Software Architect · DevOps Engineer
+profileTitle: Professioneel profiel
+profileText: >-
+  Ik ben een freelance softwareontwikkelaar uit Izegem, België, met meer dan
+  12 jaar ervaring in het bouwen van betrouwbare digitale producten voor een
+  breed scala aan bedrijfsbehoeften. Ik werk aan full-stack ontwikkeling,
+  back-end systemen, databases, architectuur en automatisering om teams te
+  helpen applicaties veilig en schaalbaar op te bouwen.
+expertiseTitle: Kernexpertise
+expertiseIntro: >-
+  Mijn werk combineert praktische engineering met schaalbare ontwerpen en
+  onderhoudbare implementaties:
+expertiseLabelSuffix: ":"
+expertise:
+  - label: Back-End ontwikkeling
+    description: ASP.NET, .NET Core, Entity Framework Core, REST API's en veilige applicatie-architectuur.
+  - label: Front-End ontwikkeling
+    description: Angular, TypeScript en JavaScript voor responsieve, gebruiksvriendelijke interfaces.
+  - label: Software-architectuur
+    description: Ontwerpen van modulaire, schaalbare oplossingen die duurzame onderhoudbaarheid ondersteunen.
+  - label: Databasebeheer
+    description: SQL Server, MySQL en Progress 4GL voor robuuste, data-gedreven applicaties.
+  - label: DevOps & automatisering
+    description: Ervaring met GitLab CI/CD, geautomatiseerde pipelines en gestroomlijnde releaseprocessen.
+  - label: Containerisatie
+    description: Docker-gebaseerde workflows voor consistente deployment en schaalbare omgevingen.
+  - label: Documentatie
+    description: Het opstellen van duidelijke technische documentatie en systeemgidsen voor teams en stakeholders.
+projectsTitle: Geselecteerde projecten
+projectsIntro: Representatief werk uit recente jaren in samenwerking met productteams en zakelijke klanten.
+projectCompanyPrefix: voor
+contactTitle: Contact
+roleLabel: "Huidige functie:"
+roleValue: Freelance Full Stack Developer bij Kodevelop
+educationLabel: "Opleiding:"
+educationValue: Bachelor in Elektronica en ICT
+locationLabel: "Locatie:"
+locationValue: Izegem, België
+contactMessage: Voor directe vragen kunt u mijn LinkedIn-profiel gebruiken.
