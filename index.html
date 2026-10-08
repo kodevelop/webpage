@@ -3,253 +3,689 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jens Malfait | Freelance Full Stack Developer</title>
+    <title>Kodevelop | Software &amp; Architecture</title>
     <link rel="icon" type="image/png" href="./static/kodevelop-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --kodevelop-navy: #002e6f;
-        --deep-navy: #001f4d;
-        --off-white: #f7f9fc;
+        --kodevelop-navy: #073b82;
+        --deep-navy: #082e67;
+        --blue: #2865b8;
+        --pale-blue: #edf4fb;
+        --cool-grey: #6487bd;
+        --light-blue: #d8e7f7;
         --white: #ffffff;
-        --cool-grey: #64748b;
-        --light-grey: #e8edf3;
       }
 
       * {
         box-sizing: border-box;
       }
 
-      body {
-        font-family: "Poppins", sans-serif;
-        background-color: var(--off-white);
-        color: var(--deep-navy);
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
+      html {
+        scroll-behavior: smooth;
       }
 
-      .top-bar {
+      body {
+        margin: 0;
+        color: var(--deep-navy);
+        background: var(--white);
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      a:focus-visible,
+      select:focus-visible {
+        outline: 3px solid #75a8e5;
+        outline-offset: 4px;
+      }
+
+      .site-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 16px;
-        background-color: var(--white);
-        border-bottom: 1px solid var(--light-grey);
-        padding: 12px clamp(16px, 4vw, 32px);
+        gap: 30px;
+        max-width: 1240px;
+        min-height: 94px;
+        margin: 0 auto;
+        padding: 16px 30px;
+        border-bottom: 1px solid #eef2f7;
       }
 
-      .brand {
+      .brand,
+      .brand img {
         display: block;
-        flex: 0 1 auto;
-        min-width: 0;
       }
 
       .brand img {
-        display: block;
-        width: min(250px, 42vw);
+        width: min(250px, 26vw);
         height: auto;
       }
 
-      .container {
-        max-width: 920px;
-        margin: 0 auto;
-        padding: 24px clamp(16px, 4vw, 32px) 56px;
-      }
-
-      .language-menu {
+      .main-nav {
         display: flex;
         align-items: center;
-        gap: 8px;
-        flex-shrink: 0;
+        gap: clamp(18px, 3.5vw, 42px);
+        margin-left: auto;
       }
 
-      .language-menu label {
-        display: inline-flex;
-        align-items: center;
-        color: var(--cool-grey);
+      .main-nav a {
+        color: var(--deep-navy);
         font-size: 0.9rem;
+        text-decoration: none;
+      }
+
+      .main-nav a:hover,
+      .text-link:hover {
+        color: var(--blue);
+        text-decoration: underline;
+        text-underline-offset: 5px;
       }
 
       .language-menu select {
-        border: 1px solid var(--light-grey);
+        max-width: 122px;
+        padding: 7px 8px;
+        border: 1px solid var(--light-blue);
+        border-radius: 6px;
         background: var(--white);
         color: var(--deep-navy);
-        border-radius: 6px;
-        padding: 6px 10px;
         font: inherit;
-        font-size: 0.875rem;
+        font-size: 0.8rem;
       }
 
-      .language-menu select:focus-visible {
-        outline: 2px solid var(--kodevelop-navy);
-        outline-offset: 2px;
+      .button {
+        display: inline-flex;
+        min-height: 46px;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 10px 26px;
+        border: 1.5px solid var(--kodevelop-navy);
+        border-radius: 999px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
       }
 
-      .profile-header {
-        text-align: center;
-        padding: 32px 0 24px;
+      .button:hover {
+        transform: translateY(-1px);
       }
 
-      .profile-header img {
-        width: 112px;
-        height: 112px;
-        border-radius: 50%;
-        object-fit: cover;
+      .button-primary {
+        background: var(--kodevelop-navy);
+        color: var(--white);
       }
 
-      .profile-header h1 {
-        margin: 16px 0 8px;
+      .button-primary:hover {
+        background: var(--deep-navy);
+      }
+
+      .button-outline {
+        background: transparent;
         color: var(--kodevelop-navy);
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
+      }
+
+      .button-outline:hover {
+        background: var(--pale-blue);
+      }
+
+      .header-cta {
+        min-height: 42px;
+        padding: 8px 25px;
+        font-size: 0.82rem;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+        align-items: center;
+        gap: 35px;
+        max-width: 1240px;
+        min-height: 415px;
+        margin: 0 auto;
+        padding: 55px 30px 62px;
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: #5889ce;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.23em;
+      }
+
+      .hero h1 {
+        max-width: 670px;
+        margin: 0;
+        color: var(--kodevelop-navy);
+        font-size: clamp(2.5rem, 4.7vw, 4rem);
         font-weight: 800;
-        letter-spacing: -0.04em;
+        letter-spacing: -0.045em;
+        line-height: 1.15;
+      }
+
+      .hero-copy {
+        max-width: 595px;
+        margin: 20px 0 25px;
+        color: var(--cool-grey);
+        font-size: clamp(1rem, 1.5vw, 1.15rem);
+        line-height: 1.65;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .hero-illustration {
+        display: block;
+        width: 100%;
+        max-width: 470px;
+        margin: 0 auto;
+      }
+
+      .services-band {
+        background: linear-gradient(110deg, #f2f7fc, #f8fbfe);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(28px, 7vw, 88px);
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 48px 30px 54px;
+      }
+
+      .service-card {
+        min-width: 0;
+      }
+
+      .service-icon {
+        display: block;
+        width: 56px;
+        height: 56px;
+        margin-bottom: 13px;
+        fill: none;
+        stroke: var(--kodevelop-navy);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2;
+      }
+
+      .service-card h2 {
+        margin: 0 0 12px;
+        color: var(--kodevelop-navy);
+        font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+        line-height: 1.35;
+      }
+
+      .service-card p {
+        margin: 0;
+        color: var(--cool-grey);
+        font-size: 0.96rem;
+      }
+
+      .projects-section {
+        padding: 54px 30px 62px;
+        background: var(--white);
+      }
+
+      .projects-heading {
+        max-width: 760px;
+        margin: 0 auto 28px;
+        text-align: center;
+      }
+
+      .projects-heading h2 {
+        margin: 0 0 8px;
+        color: var(--kodevelop-navy);
+        font-size: clamp(1.8rem, 3.2vw, 2.45rem);
+        letter-spacing: -0.035em;
         line-height: 1.2;
       }
 
-      .profile-header p {
-        max-width: 680px;
+      .projects-heading p {
+        margin: 0;
+        color: var(--cool-grey);
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        max-width: 1050px;
         margin: 0 auto;
-        color: var(--cool-grey);
-        font-size: 1.0625rem;
-        font-weight: 300;
       }
 
-      .section {
-        margin-top: 24px;
-        padding: clamp(20px, 3vw, 32px);
-        background-color: var(--white);
-        border: 1px solid var(--light-grey);
-        border-radius: 8px;
+      .project-card {
+        padding: 22px 24px;
+        border: 1px solid var(--light-blue);
+        border-radius: 10px;
+        background: #fbfdff;
+        transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
       }
 
-      .section h2 {
-        margin: 0 0 12px;
+      .project-card:hover {
+        transform: translateY(-2px);
+        border-color: #a9c7e9;
+        box-shadow: 0 10px 25px rgb(8 46 103 / 8%);
+      }
+
+      .project-card h3 {
+        margin: 0 0 8px;
+        font-size: 1.15rem;
+        line-height: 1.35;
+      }
+
+      .project-card h3 a {
         color: var(--kodevelop-navy);
-        font-size: clamp(1.75rem, 4vw, 2.25rem);
-        font-weight: 600;
-        line-height: 1.25;
-      }
-
-      .section p {
-        margin: 10px 0;
-        color: var(--cool-grey);
-      }
-
-      .section a {
         text-decoration: none;
       }
 
-      .section a:hover {
+      .project-card h3 a:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .project-card p {
+        margin: 0;
+        color: var(--cool-grey);
+        font-size: 0.92rem;
+      }
+
+      .project-card .project-company {
+        margin-top: 12px;
+        color: var(--deep-navy);
+        font-size: 0.82rem;
+      }
+
+      .project-company a {
+        color: var(--kodevelop-navy);
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .project-company a:hover {
         text-decoration: underline;
       }
 
-      .social-logo {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        vertical-align: middle;
-        margin: 4px 8px 0 0;
+      .about-section {
+        display: grid;
+        grid-template-columns: 190px minmax(0, 1fr);
+        align-items: center;
+        gap: 42px;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 60px 30px 38px;
       }
 
-      .work-experience {
-        list-style: none;
+      .portrait {
+        display: block;
+        width: 172px;
+        height: 172px;
+        border-radius: 36% 36% 42% 42%;
+        object-fit: cover;
+      }
+
+      .about-section .eyebrow {
+        margin-bottom: 4px;
+      }
+
+      .about-section h2 {
+        max-width: 620px;
+        margin: 0 0 14px;
+        color: var(--kodevelop-navy);
+        font-size: clamp(1.8rem, 3.2vw, 2.55rem);
+        font-weight: 700;
+        letter-spacing: -0.035em;
+        line-height: 1.2;
+      }
+
+      .about-section p:not(.eyebrow) {
+        max-width: 620px;
+        margin: 0 0 18px;
+        color: var(--cool-grey);
+      }
+
+      .text-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        border-bottom: 1px solid var(--kodevelop-navy);
+        color: var(--kodevelop-navy);
+        font-size: 0.95rem;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      .technology-strip {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 20px 30px 48px;
+      }
+
+      .technology-strip .eyebrow {
+        margin-bottom: 16px;
+      }
+
+      .technology-list {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 0;
+        margin: 0;
         padding: 0;
+        list-style: none;
       }
 
-      .work-experience li {
-        margin-bottom: 12px;
-        padding-left: 16px;
+      .technology-list li {
+        padding: 0 10px;
+        border-right: 1px solid var(--light-blue);
+        color: var(--deep-navy);
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      .technology-list li:first-child {
+        padding-left: 0;
+      }
+
+      .technology-list li:last-child {
+        padding-right: 0;
+        border-right: 0;
+      }
+
+      .contact-banner {
         position: relative;
-        color: var(--cool-grey);
+        overflow: hidden;
+        padding: 42px 24px 39px;
+        background: radial-gradient(ellipse at 50% 0, #124986, var(--deep-navy) 72%);
+        color: var(--white);
+        text-align: center;
       }
 
-      .work-experience li::before {
-        content: "";
+      .contact-banner::before,
+      .contact-banner::after {
         position: absolute;
-        left: 0;
-        top: 4px;
-        bottom: 4px;
-        width: 3px;
-        background-color: var(--kodevelop-navy);
-        border-radius: 2px;
+        width: 230px;
+        height: 230px;
+        border: 1px solid rgb(131 178 230 / 24%);
+        border-radius: 50%;
+        content: "";
+        pointer-events: none;
       }
 
-      .project-list {
-        list-style: none;
-        padding: 0;
-        margin: 18px 0 0;
+      .contact-banner::before {
+        bottom: -175px;
+        left: -40px;
       }
 
-      .project-list li {
-        background: var(--off-white);
-        border-left: 3px solid var(--kodevelop-navy);
-        border-radius: 6px;
-        padding: 14px 16px;
-        margin-bottom: 12px;
-        color: var(--cool-grey);
+      .contact-banner::after {
+        top: -175px;
+        right: -115px;
       }
 
-      .project-list strong {
+      .contact-banner h2 {
+        position: relative;
+        margin: 0 0 16px;
+        font-size: clamp(1.6rem, 3vw, 2.15rem);
+        line-height: 1.3;
+      }
+
+      .contact-banner .button {
+        position: relative;
+        border-color: var(--white);
+        color: var(--white);
+      }
+
+      .contact-banner .button:hover {
+        background: var(--white);
         color: var(--deep-navy);
       }
 
-      .project-list a.project-link,
-      .project-list a.company-link {
-        color: var(--kodevelop-navy);
-        text-decoration: none;
-        font-weight: 600;
-      }
-
-      .project-list a.project-link:hover,
-      .project-list a.company-link:hover {
-        text-decoration: underline;
-      }
-
       .site-footer {
-        display: flex;
-        justify-content: center;
-        padding: 20px 16px;
-        background-color: var(--deep-navy);
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 20px 30px 14px;
       }
 
-      .site-footer img {
+      .footer-main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding-bottom: 16px;
+      }
+
+      .footer-brand img {
         display: block;
-        width: min(210px, 65vw);
+        width: min(220px, 52vw);
         height: auto;
       }
 
-      @media (max-width: 380px) {
-        .language-menu label {
-          position: absolute;
-          width: 1px;
-          height: 1px;
-          padding: 0;
-          margin: -1px;
-          overflow: hidden;
-          clip: rect(0, 0, 0, 0);
-          white-space: nowrap;
-          border: 0;
+      .footer-email {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--kodevelop-navy);
+        font-size: 0.86rem;
+        text-decoration: none;
+      }
+
+      .footer-email:hover {
+        text-decoration: underline;
+      }
+
+      .copyright {
+        margin: 0;
+        padding-top: 11px;
+        border-top: 1px solid var(--light-blue);
+        color: var(--cool-grey);
+        font-size: 0.78rem;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        clip-path: inset(50%);
+      }
+
+      @media (max-width: 900px) {
+        .site-header {
+          flex-wrap: wrap;
+          gap: 18px 24px;
+        }
+
+        .main-nav {
+          gap: 20px;
+        }
+
+        .hero {
+          grid-template-columns: minmax(0, 1fr) minmax(275px, 0.8fr);
+          gap: 18px;
+          min-height: 365px;
+          padding-top: 45px;
+        }
+
+        .hero h1 {
+          font-size: clamp(2.25rem, 5vw, 3.3rem);
+        }
+      }
+
+      @media (max-width: 680px) {
+        .site-header {
+          justify-content: space-between;
+          gap: 14px;
+          padding: 14px 20px;
         }
 
         .brand img {
-          width: min(220px, 48vw);
+          width: min(220px, 52vw);
+        }
+
+        .main-nav {
+          order: 3;
+          justify-content: space-between;
+          width: 100%;
+          gap: 10px;
+        }
+
+        .main-nav a {
+          font-size: 0.82rem;
+        }
+
+        .header-cta {
+          display: none;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 10px;
+          padding: 45px 22px 48px;
+        }
+
+        .hero-illustration {
+          width: min(82%, 370px);
+          margin-top: 12px;
+        }
+
+        .hero h1 {
+          max-width: 560px;
+          font-size: clamp(2.4rem, 10vw, 3.4rem);
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+          padding: 38px 24px;
+        }
+
+        .service-card {
+          display: grid;
+          grid-template-columns: 56px minmax(0, 1fr);
+          column-gap: 16px;
+        }
+
+        .service-icon {
+          grid-row: span 2;
+          margin: 0;
+        }
+
+        .service-card h2 {
+          margin-bottom: 6px;
+        }
+
+        .projects-section {
+          padding: 42px 22px;
+        }
+
+        .project-grid {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        .about-section {
+          grid-template-columns: 115px minmax(0, 1fr);
+          gap: 24px;
+          padding: 42px 24px 30px;
+        }
+
+        .portrait {
+          width: 115px;
+          height: 145px;
+        }
+
+        .technology-strip {
+          padding: 15px 24px 38px;
+        }
+
+        .technology-list {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          row-gap: 16px;
+        }
+
+        .technology-list li:nth-child(3n) {
+          border-right: 0;
+        }
+
+        .technology-list li:nth-child(4) {
+          padding-left: 0;
+        }
+      }
+
+      @media (max-width: 440px) {
+        .language-menu select {
+          max-width: 96px;
+          padding: 6px;
+          font-size: 0.72rem;
+        }
+
+        .hero-actions {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .hero-actions .button {
+          width: 100%;
+        }
+
+        .about-section {
+          grid-template-columns: 1fr;
+          gap: 22px;
+        }
+
+        .portrait {
+          width: 130px;
+          height: 150px;
+        }
+
+        .footer-main {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          transition-duration: 0.01ms !important;
         }
       }
     </style>
   </head>
   <body>
-    <div class="top-bar">
-      <a class="brand" href="./index.html">
-        <img src="./static/kodevelop-logo-horizontal.png" alt="Kodevelop — software & architecture" />
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="Kodevelop home">
+        <img src="./static/kodevelop-logo-horizontal.png" alt="Kodevelop — software &amp; architecture" />
       </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a id="nav-services" href="#services"></a>
+        <a id="nav-projects" href="#projects"></a>
+        <a id="nav-technology" href="#technologies"></a>
+        <a id="nav-about" href="#about"></a>
+        <a id="nav-contact" href="#contact"></a>
+      </nav>
       <div class="language-menu">
-        <label for="language-select">Language</label>
+        <label class="visually-hidden" for="language-select">Language</label>
         <select id="language-select" aria-label="Select language">
           <option value="en">English</option>
           <option value="nl">Nederlands</option>
@@ -257,128 +693,186 @@
           <option value="de">Deutsch</option>
         </select>
       </div>
-    </div>
-    <div class="container">
-      <header class="profile-header">
-        <img src="./static/headshot.png" alt="Portrait of Jens Malfait" />
-        <h1 id="profile-name"></h1>
-        <p id="profile-headline"></p>
-      </header>
+      <a class="button button-primary header-cta" id="header-contact" href="mailto:info@kodevelop.be"></a>
+    </header>
 
-      <div class="section">
-        <h2 id="profile-title"></h2>
-        <p id="profile-text"></p>
-      </div>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow" id="hero-eyebrow"></p>
+          <h1 id="hero-title"></h1>
+          <p class="hero-copy" id="hero-text"></p>
+          <div class="hero-actions">
+            <a class="button button-primary" id="hero-primary-cta" href="mailto:info@kodevelop.be">
+              <span></span><span aria-hidden="true">→</span>
+            </a>
+            <a class="button button-outline" id="hero-secondary-cta" href="#services"></a>
+          </div>
+        </div>
+        <svg class="hero-illustration" viewBox="0 0 480 340" aria-hidden="true">
+          <circle cx="220" cy="170" r="145" fill="#eef5fc" />
+          <circle cx="115" cy="213" r="84" fill="#e5f0fb" />
+          <circle cx="354" cy="210" r="88" fill="#f4f8fc" />
+          <path d="M345 80h72a8 8 0 0 1 8 8v95m0 0h37m-37 0v30h-41m-74 45v35h156v-23" fill="none" stroke="#0a3b7a" stroke-width="2" />
+          <circle cx="345" cy="80" r="5" fill="#0a3b7a" />
+          <circle cx="425" cy="183" r="5" fill="#0a3b7a" />
+          <circle cx="310" cy="268" r="5" fill="#0a3b7a" />
+          <rect x="86" y="92" width="270" height="184" rx="14" fill="#fff" stroke="#0a3b7a" stroke-width="3" />
+          <path d="M100 92h242a14 14 0 0 1 14 14v12H86v-12a14 14 0 0 1 14-14Z" fill="#0a3b7a" />
+          <circle cx="105" cy="105" r="4" fill="#fff" />
+          <circle cx="120" cy="105" r="4" fill="#fff" />
+          <circle cx="135" cy="105" r="4" fill="#fff" />
+          <path d="M120 148h42m-42 18h84m-84 18h111m-111 18h51m-51 18h95" stroke="#0a3b7a" stroke-linecap="round" stroke-width="6" />
+          <path d="M176 148h53m-15 18h74m-46 18h52m-66 18h71m-42 18h38" stroke="#b7cee9" stroke-linecap="round" stroke-width="6" />
+          <path d="m423 46 28 16v33l-28 16-28-16V62l28-16Zm-28 16 28 17 28-17m-28 17v32" fill="none" stroke="#0a3b7a" stroke-linejoin="round" stroke-width="2.5" />
+          <ellipse cx="423" cy="245" rx="27" ry="11" fill="#fff" stroke="#0a3b7a" stroke-width="2.5" />
+          <path d="M396 245v43c0 6 12 11 27 11s27-5 27-11v-43m-54 15c0 6 12 11 27 11s27-5 27-11m-54 14c0 6 12 11 27 11s27-5 27-11" fill="none" stroke="#0a3b7a" stroke-width="2.5" />
+        </svg>
+      </section>
 
-      <div class="section">
-        <h2 id="expertise-title"></h2>
-        <p id="expertise-intro"></p>
-        <ul class="work-experience" id="expertise-list"></ul>
-      </div>
-
-      <div class="section">
-        <h2 id="projects-title"></h2>
-        <p id="projects-intro"></p>
-        <ul class="project-list" id="projects-list"></ul>
-      </div>
-
-      <div class="section">
-        <h2 id="contact-title"></h2>
-        <p><strong id="role-label"></strong> <span id="role-value"></span></p>
-        <p><strong id="education-label"></strong> <span id="education-value"></span></p>
-        <p><strong id="location-label"></strong> <span id="location-value"></span></p>
-        <p id="contact-message"></p>
-        <p>
-          <a href="https://www.linkedin.com/in/jens-malfait-55916a64" target="_blank" rel="noreferrer">
-            <svg viewBox="0 0 48 48" alt="LinkedIn Logo" class="social-logo">
-              <circle cx="24" cy="24" r="20" fill="#0077B5" />
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M18.7747 14.2839C18.7747 15.529 17.8267 16.5366 16.3442 16.5366C14.9194 16.5366 13.9713 15.529 14.0007 14.2839C13.9713 12.9783 14.9193 12 16.3726 12C17.8267 12 18.7463 12.9783 18.7747 14.2839ZM14.1199 32.8191V18.3162H18.6271V32.8181H14.1199V32.8191Z"
-                fill="white"
-              />
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M22.2393 22.9446C22.2393 21.1357 22.1797 19.5935 22.1201 18.3182H26.0351L26.2432 20.305H26.3322C26.9254 19.3854 28.4079 17.9927 30.8101 17.9927C33.7752 17.9927 35.9995 19.9502 35.9995 24.219V32.821H31.4922V24.7838C31.4922 22.9144 30.8404 21.6399 29.2093 21.6399C27.9633 21.6399 27.2224 22.4999 26.9263 23.3297C26.8071 23.6268 26.7484 24.0412 26.7484 24.4574V32.821H22.2411V22.9446H22.2393Z"
-                fill="white"
-              />
+      <section class="services-band" id="services" aria-labelledby="services-title">
+        <h2 class="visually-hidden" id="services-title"></h2>
+        <div class="services-grid">
+          <article class="service-card">
+            <svg class="service-icon" viewBox="0 0 56 56" aria-hidden="true">
+              <path d="m17 17-12 11 12 11m22-22 12 11-12 11M33 8 23 48" />
             </svg>
-          </a>
-          <a href="https://github.com/kodevelop" target="_blank" rel="noreferrer">
-            <svg viewBox="-2 -2 24 24" alt="Github Logo" class="social-logo">
-              <path
-                d="M8.18 15.008c.12 0 .211-.004.271-.012a.317.317 0 0 0 .18-.107c.06-.063.09-.154.09-.274l-.004-.557c-.003-.355-.004-.637-.004-.844l-.188.033a2.41 2.41 0 0 1-.455.028 3.498 3.498 0 0 1-.57-.057 1.276 1.276 0 0 1-.548-.246 1.04 1.04 0 0 1-.36-.503l-.082-.189a2.046 2.046 0 0 0-.258-.417.989.989 0 0 0-.357-.312l-.057-.04a.602.602 0 0 1-.106-.1.455.455 0 0 1-.074-.114c-.016-.038-.003-.07.04-.094a.533.533 0 0 1 .238-.037l.164.025c.11.021.245.087.406.196.16.11.293.251.397.426.126.224.277.395.455.512a.964.964 0 0 0 .536.176c.18 0 .336-.013.467-.04a1.63 1.63 0 0 0 .369-.124c.049-.365.182-.647.4-.843a5.61 5.61 0 0 1-.839-.148 3.346 3.346 0 0 1-.77-.32 2.204 2.204 0 0 1-.66-.548c-.174-.219-.317-.505-.43-.86a4.09 4.09 0 0 1-.167-1.229c0-.66.216-1.223.647-1.687-.202-.497-.183-1.054.057-1.671.159-.05.394-.013.705.11.311.123.54.228.684.316.145.087.26.16.348.22a5.814 5.814 0 0 1 1.573-.212c.54 0 1.065.07 1.573.213l.31-.197c.214-.13.465-.251.754-.36.29-.11.511-.14.664-.09.246.617.268 1.174.065 1.67.432.465.648 1.027.648 1.688 0 .464-.056.875-.168 1.233-.112.358-.257.644-.434.86a2.29 2.29 0 0 1-.664.545 3.342 3.342 0 0 1-.77.32 5.605 5.605 0 0 1-.84.147c.284.245.426.633.426 1.163v1.957c0 .093.014.168.041.226a.226.226 0 0 0 .131.119c.06.021.114.035.16.04.047.006.113.009.2.009h-1.966-2.227z"
-              />
-              <path
-                d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0 2C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10z"
-              />
+            <h2 id="service-title-1"></h2>
+            <p id="service-description-1"></p>
+          </article>
+          <article class="service-card">
+            <svg class="service-icon" viewBox="0 0 56 56" aria-hidden="true">
+              <rect x="22" y="5" width="12" height="12" rx="1" />
+              <rect x="5" y="39" width="12" height="12" rx="1" />
+              <rect x="39" y="39" width="12" height="12" rx="1" />
+              <path d="M28 17v10M11 39V27h34v12M45 27v12" />
             </svg>
+            <h2 id="service-title-2"></h2>
+            <p id="service-description-2"></p>
+          </article>
+          <article class="service-card">
+            <svg class="service-icon" viewBox="0 0 56 56" aria-hidden="true">
+              <path d="M17 43h24a11 11 0 0 0 1-22 15 15 0 0 0-28-2 12 12 0 0 0 3 24Z" />
+            </svg>
+            <h2 id="service-title-3"></h2>
+            <p id="service-description-3"></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="projects-section" id="projects" aria-labelledby="projects-title">
+        <div class="projects-heading">
+          <h2 id="projects-title"></h2>
+          <p id="projects-intro"></p>
+        </div>
+        <div class="project-grid" id="project-list"></div>
+      </section>
+
+      <section class="about-section" id="about" aria-labelledby="about-title">
+        <img class="portrait" src="./static/headshot.png" alt="Portrait of Jens Malfait" />
+        <div>
+          <p class="eyebrow" id="about-eyebrow"></p>
+          <h2 id="about-title"></h2>
+          <p id="about-text"></p>
+          <a class="text-link" href="https://www.linkedin.com/in/jens-malfait-55916a64" target="_blank" rel="noreferrer">
+            <span id="about-link"></span><span aria-hidden="true">→</span>
           </a>
-        </p>
-      </div>
-    </div>
+        </div>
+      </section>
+
+      <section class="technology-strip" id="technologies" aria-labelledby="technologies-title">
+        <h2 class="eyebrow" id="technologies-title"></h2>
+        <ul class="technology-list" id="technology-list"></ul>
+      </section>
+
+      <section class="contact-banner" id="contact" aria-labelledby="contact-cta-title">
+        <h2 id="contact-cta-title"></h2>
+        <a class="button" id="contact-cta-link" href="mailto:info@kodevelop.be">
+          <span></span><span aria-hidden="true">→</span>
+        </a>
+      </section>
+    </main>
+
     <footer class="site-footer">
-      <img src="./static/kodevelop-logo-horizontal-reversed.png" alt="Kodevelop — software & architecture" />
+      <div class="footer-main">
+        <a class="footer-brand" href="./index.html" aria-label="Kodevelop home">
+          <img src="./static/kodevelop-logo-horizontal.png" alt="Kodevelop — software &amp; architecture" />
+        </a>
+        <a class="footer-email" href="mailto:info@kodevelop.be">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="1" stroke="currentColor" stroke-width="1.8" />
+            <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.8" />
+          </svg>
+          info@kodevelop.be
+        </a>
+      </div>
+      <p class="copyright" id="copyright-text"></p>
     </footer>
 
     <script>
-      const translations = {"en":{"name":"Jens Malfait","headline":"Freelance Full Stack Developer · Software Architect · DevOps Engineer","profileTitle":"Professional Profile","profileText":"I’m a freelance software developer based in Izegem, Belgium, with 12+ years of experience creating reliable digital products for a wide range of business needs. I work across full-stack development, backend systems, databases, architecture, and automation to help teams build and scale applications with confidence.","expertiseTitle":"Core Expertise","expertiseIntro":"My work combines practical engineering with scalable design and maintainable delivery:","expertiseLabelSuffix":":","expertise":[{"label":"Back-End Development","description":"ASP.NET, .NET Core, Entity Framework Core, REST APIs, and secure application architecture."},{"label":"Front-End Development","description":"Angular, TypeScript, and JavaScript for responsive, user-focused interfaces."},{"label":"Software Architecture","description":"Designing modular, scalable solutions that support long-term maintainability."},{"label":"Database Management","description":"SQL Server, MySQL, and Progress 4GL for robust data-driven applications."},{"label":"DevOps & Automation","description":"Experience with GitLab CI/CD, automated pipelines, and streamlined release processes."},{"label":"Containerization","description":"Docker-based workflows for deployment consistency and scalable environments."},{"label":"Documentation","description":"Creating clear technical documentation and system guidance for teams and stakeholders."}],"projectsTitle":"Selected Projects","projectsIntro":"Representative work from recent years with product teams and business clients.","projectCompanyPrefix":"for","contactTitle":"Contact","roleLabel":"Current Role:","roleValue":"Freelance Full Stack Developer at Kodevelop","educationLabel":"Education:","educationValue":"Bachelor in Electronics and ICT","locationLabel":"Location:","locationValue":"Izegem, Belgium","contactMessage":"For direct inquiries, please use my LinkedIn profile.","projects":[{"id":"accident-manager","order":10,"title":"Accident Manager","url":"https://acm-tt.trustteam.be/","description":"Built for the Belgian insurance market to streamline communication between victims and insurers, reducing paper trails, incomplete files, and administrative delays. The platform supports a more structured claims process and is used by insurance companies to improve the flow of information and case handling","company":"Trustteam","companyUrl":"https://www.trustteam.be/"},{"id":"xy-tool","order":20,"title":"XY-Tool","url":"https://www.agoria.be/xy-tool/nl","description":"Designed to support the Belgian social election process for companies with more than 50 employees. The tool guides organizations through the rigid step-by-step process of organizing elections, helping them stay compliant and organized throughout the process","company":"Agoria","companyUrl":"https://www.agoria.be/"},{"id":"flexyoo","order":30,"title":"Flexyoo","url":"https://app.flexyoo.be/login?lang=nl","description":"A flexible payroll and benefits platform that helps companies offer employees extra legal benefits in a way that creates a net positive impact for both employees and employers. The solution supports employee choice, payroll flexibility, and a more engaging benefits experience","company":"Trustteam","companyUrl":"https://www.trustteam.be/"},{"id":"turnup","order":40,"title":"TurnUp","url":"https://www.turnup.world/nl/nl-platform/","description":"A customer-facing platform focused on reducing no-shows by following up with potential customers, nudging them toward action, and helping teams fill empty slots quickly when someone does not show up. It improves conversion and operational efficiency","company":"TurnUp World","companyUrl":"https://www.turnup.world/"}]},"nl":{"name":"Jens Malfait","headline":"Freelance Full Stack Developer · Software Architect · DevOps Engineer","profileTitle":"Professioneel profiel","profileText":"Ik ben een freelance softwareontwikkelaar uit Izegem, België, met meer dan 12 jaar ervaring in het bouwen van betrouwbare digitale producten voor een breed scala aan bedrijfsbehoeften. Ik werk aan full-stack ontwikkeling, back-end systemen, databases, architectuur en automatisering om teams te helpen applicaties veilig en schaalbaar op te bouwen.","expertiseTitle":"Kernexpertise","expertiseIntro":"Mijn werk combineert praktische engineering met schaalbare ontwerpen en onderhoudbare implementaties:","expertiseLabelSuffix":":","expertise":[{"label":"Back-End ontwikkeling","description":"ASP.NET, .NET Core, Entity Framework Core, REST API's en veilige applicatie-architectuur."},{"label":"Front-End ontwikkeling","description":"Angular, TypeScript en JavaScript voor responsieve, gebruiksvriendelijke interfaces."},{"label":"Software-architectuur","description":"Ontwerpen van modulaire, schaalbare oplossingen die duurzame onderhoudbaarheid ondersteunen."},{"label":"Databasebeheer","description":"SQL Server, MySQL en Progress 4GL voor robuuste, data-gedreven applicaties."},{"label":"DevOps & automatisering","description":"Ervaring met GitLab CI/CD, geautomatiseerde pipelines en gestroomlijnde releaseprocessen."},{"label":"Containerisatie","description":"Docker-gebaseerde workflows voor consistente deployment en schaalbare omgevingen."},{"label":"Documentatie","description":"Het opstellen van duidelijke technische documentatie en systeemgidsen voor teams en stakeholders."}],"projectsTitle":"Geselecteerde projecten","projectsIntro":"Representatief werk uit recente jaren in samenwerking met productteams en zakelijke klanten.","projectCompanyPrefix":"voor","contactTitle":"Contact","roleLabel":"Huidige functie:","roleValue":"Freelance Full Stack Developer bij Kodevelop","educationLabel":"Opleiding:","educationValue":"Bachelor in Elektronica en ICT","locationLabel":"Locatie:","locationValue":"Izegem, België","contactMessage":"Voor directe vragen kunt u mijn LinkedIn-profiel gebruiken.","projects":[{"id":"accident-manager","order":10,"title":"Accident Manager","url":"https://acm-tt.trustteam.be/","description":"Ontwikkeld voor de Belgische verzekeringsmarkt om de communicatie tussen het slachtoffer en de verzekeraar te stroomlijnen. Het verkleint papierwerk, ontbrekende informatie en administratieve vertragingen, waardoor claims efficiënter en beter gestructureerd kunnen worden afgehandeld","company":"Trustteam","companyUrl":"https://www.trustteam.be/"},{"id":"xy-tool","order":20,"title":"XY-Tool","url":"https://www.agoria.be/xy-tool/nl","description":"Gebruik voor het organiseren van de Belgische sociale verkiezingen in bedrijven met meer dan 50 werknemers. De tool begeleidt organisaties stap voor stap door het strikte proces van het organiseren van de verkiezingen, zodat ze compliant en gestructureerd blijven","company":"Agoria","companyUrl":"https://www.agoria.be/"},{"id":"flexyoo","order":30,"title":"Flexyoo","url":"https://app.flexyoo.be/login?lang=nl","description":"Een flexibel payroll- en voordelenplatform dat bedrijven helpt om extra wettelijke voordelen aan te bieden. Dit geeft medewerkers meer keuze en levert zowel voor werknemers als werkgevers een positief netto effect op","company":"Trustteam","companyUrl":"https://www.trustteam.be/"},{"id":"turnup","order":40,"title":"TurnUp","url":"https://www.turnup.world/nl/nl-platform/","description":"Een platform voor klantgerichte bedrijven om het percentage no-shows te verminderen. Het stuurt potentiële klanten op een gerichte manier aan, volgt afwezigen op en probeert open plekken snel opnieuw te vullen wanneer iemand niet verschijnt","company":"TurnUp World","companyUrl":"https://www.turnup.world/"}]},"fr":{"name":"Jens Malfait","headline":"Développeur Full Stack Freelance · Architecte Logiciel · DevOps","profileTitle":"Profil professionnel","profileText":"Je suis un développeur logiciel freelance basé à Izegem, en Belgique, avec plus de 12 ans d'expérience dans la création de produits numériques fiables pour un large éventail de besoins professionnels. Je travaille sur le développement full stack, les systèmes backend, les bases de données, l'architecture et l'automatisation afin d'aider les équipes à concevoir des applications robustes et évolutives.","expertiseTitle":"Expertises clés","expertiseIntro":"Mon travail associe ingénierie concrète, conception évolutive et mise en œuvre maintenable :","expertiseLabelSuffix":" :","expertise":[{"label":"Développement back-end","description":"ASP.NET, .NET Core, Entity Framework Core, API REST et architecture applicative sécurisée."},{"label":"Développement front-end","description":"Angular, TypeScript et JavaScript pour des interfaces réactives et centrées sur l'utilisateur."},{"label":"Architecture logicielle","description":"Conception de solutions modulaires et évolutives, pensées pour une maintenance durable."},{"label":"Gestion de bases de données","description":"SQL Server, MySQL et Progress 4GL pour des applications solides et orientées données."},{"label":"DevOps & automatisation","description":"Expérience avec GitLab CI/CD, pipelines automatisés et processus de mise en production rationalisés."},{"label":"Conteneurisation","description":"Flux de travail basés sur Docker pour des déploiements cohérents et des environnements évolutifs."},{"label":"Documentation","description":"Rédaction de documentation technique claire et de guides système pour les équipes et les parties prenantes."}],"projectsTitle":"Projets sélectionnés","projectsIntro":"Des réalisations représentatives des dernières années en collaboration avec des équipes produit et des clients professionnels :","projectCompanyPrefix":"pour","contactTitle":"Contact","roleLabel":"Poste actuel :","roleValue":"Développeur Full Stack Freelance chez Kodevelop","educationLabel":"Formation :","educationValue":"Bachelor en Électronique et TIC","locationLabel":"Localisation :","locationValue":"Izegem, Belgique","contactMessage":"Pour toute demande directe, veuillez utiliser mon profil LinkedIn.","projects":[{"id":"accident-manager","order":10,"title":"Accident Manager","url":"https://acm-tt.trustteam.be/","description":"Conçu pour le marché belge de l'assurance afin de fluidifier la communication entre la victime et l'assureur. La solution réduit le papier, les informations manquantes et les retards administratifs, ce qui permet un traitement plus structuré des dossiers","company":"Trustteam","companyUrl":"https://www.trustteam.be/"},{"id":"xy-tool","order":20,"title":"XY-Tool","url":"https://www.agoria.be/xy-tool/nl","description":"Outil utilisé pour organiser les élections sociales belges dans les entreprises de plus de 50 salariés. Il accompagne les organisations dans la mise en œuvre rigoureuse et étape par étape du processus électoral afin d'assurer conformité et organisation","company":"Agoria","companyUrl":"https://www.agoria.be/"},{"id":"flexyoo","order":30,"title":"Flexyoo","url":"https://app.flexyoo.be/login?lang=nl","description":"Une solution de paie et d'avantages flexible qui aide les entreprises à proposer des avantages légaux complémentaires. Cela offre plus de choix aux salariés et crée un impact positif net à la fois pour les employés et les employeurs","company":"Trustteam","companyUrl":"https://www.trustteam.be/"},{"id":"turnup","order":40,"title":"TurnUp","url":"https://www.turnup.world/nl/nl-platform/","description":"Une plateforme orientée client permettant de réduire le taux de no-show. Elle suit les clients potentiels, les incite à agir et aide les équipes à combler rapidement une place vacante lorsqu'une personne ne se présente pas","company":"TurnUp World","companyUrl":"https://www.turnup.world/"}]},"de":{"name":"Jens Malfait","headline":"Freiberuflicher Full-Stack-Entwickler · Softwarearchitekt · DevOps Engineer","profileTitle":"Berufsprofil","profileText":"Ich bin ein freiberuflicher Softwareentwickler aus Izegem, Belgien, mit über 12 Jahren Erfahrung in der Entwicklung zuverlässiger digitaler Produkte für ein breites Spektrum an Geschäftsanforderungen. Ich arbeite an Full-Stack-Entwicklung, Backend-Systemen, Datenbanken, Architektur und Automatisierung, um Teams dabei zu unterstützen, Anwendungen sicher und skalierbar aufzubauen.","expertiseTitle":"Kernkompetenzen","expertiseIntro":"Meine Arbeit verbindet praktisches Engineering mit skalierbarer Gestaltung und wartbarer Umsetzung:","expertiseLabelSuffix":":","expertise":[{"label":"Back-End-Entwicklung","description":"ASP.NET, .NET Core, Entity Framework Core, REST-APIs und sichere Anwendungsarchitektur."},{"label":"Front-End-Entwicklung","description":"Angular, TypeScript und JavaScript für responsive, nutzerorientierte Oberflächen."},{"label":"Softwarearchitektur","description":"Entwurf modularer, skalierbarer Lösungen mit Fokus auf langfristige Wartbarkeit."},{"label":"Datenbankmanagement","description":"SQL Server, MySQL und Progress 4GL für robuste, datengetriebene Anwendungen."},{"label":"DevOps & Automatisierung","description":"Erfahrung mit GitLab CI/CD, automatisierten Pipelines und optimierten Release-Prozessen."},{"label":"Containerisierung","description":"Docker-basierte Workflows für konsistente Bereitstellungen und skalierbare Umgebungen."},{"label":"Dokumentation","description":"Erstellung klarer technischer Dokumentation und Systemanleitungen für Teams und Stakeholder."}],"projectsTitle":"Ausgewählte Projekte","projectsIntro":"Repräsentative Arbeiten aus den letzten Jahren in Zusammenarbeit mit Produktteams und Geschäftskunden:","projectCompanyPrefix":"für","contactTitle":"Kontakt","roleLabel":"Aktuelle Position:","roleValue":"Freiberuflicher Full-Stack-Entwickler bei Kodevelop","educationLabel":"Ausbildung:","educationValue":"Bachelor in Elektronik und ICT","locationLabel":"Standort:","locationValue":"Izegem, Belgien","contactMessage":"Für direkte Anfragen nutzen Sie bitte mein LinkedIn-Profil.","projects":[{"id":"accident-manager","order":10,"title":"Accident Manager","url":"https://acm-tt.trustteam.be/","description":"Für den belgischen Versicherungsmarkt entwickelt, um die Kommunikation zwischen Opfer und Versicherer zu vereinfachen. Die Lösung reduziert Papierkram, fehlende Informationen und verwaltungstechnische Verzögerungen und verbessert so den Ablauf von Schadensfällen","company":"Trustteam","companyUrl":"https://www.trustteam.be/"},{"id":"xy-tool","order":20,"title":"XY-Tool","url":"https://www.agoria.be/xy-tool/nl","description":"Wird für die Organisation der belgischen sozialen Wahlen in Unternehmen mit mehr als 50 Mitarbeitenden eingesetzt. Das Tool begleitet Unternehmen Schritt für Schritt durch den strengen Ablauf der Wahlvorbereitung und sorgt so für Compliance und Struktur","company":"Agoria","companyUrl":"https://www.agoria.be/"},{"id":"flexyoo","order":30,"title":"Flexyoo","url":"https://app.flexyoo.be/login?lang=nl","description":"Eine flexible Lohn- und Benefits-Plattform, die Unternehmen hilft, zusätzliche gesetzliche Vorteile anzubieten. Dadurch erhalten Mitarbeitende mehr Wahlmöglichkeiten und beide Seiten profitieren davon, sowohl Arbeitnehmer als auch Arbeitgeber","company":"Trustteam","companyUrl":"https://www.trustteam.be/"},{"id":"turnup","order":40,"title":"TurnUp","url":"https://www.turnup.world/nl/nl-platform/","description":"Eine kundenorientierte Plattform zur Reduzierung von No-Shows. Sie verfolgt potenzielle Kunden, gibt gezielte Nachfassaktionen und hilft dabei, freie Plätze schnell wieder zu besetzen, wenn jemand nicht erscheint","company":"TurnUp World","companyUrl":"https://www.turnup.world/"}]}};
+      const translations = {"en":{"name":"Jens Malfait","headline":"Freelance Full Stack Developer · Software Architect · DevOps Engineer","profileTitle":"Professional Profile","profileText":"I’m a freelance software developer based in Izegem, Belgium, with 12+ years of experience creating reliable digital products for a wide range of business needs. I work across full-stack development, backend systems, databases, architecture, and automation to help teams build and scale applications with confidence.","expertiseTitle":"Core Expertise","expertiseIntro":"My work combines practical engineering with scalable design and maintainable delivery:","expertiseLabelSuffix":":","expertise":[{"label":"Back-End Development","description":"ASP.NET, .NET Core, Entity Framework Core, REST APIs, and secure application architecture."},{"label":"Front-End Development","description":"Angular, TypeScript, and JavaScript for responsive, user-focused interfaces."},{"label":"Software Architecture","description":"Designing modular, scalable solutions that support long-term maintainability."},{"label":"Database Management","description":"SQL Server, MySQL, and Progress 4GL for robust data-driven applications."},{"label":"DevOps & Automation","description":"Experience with GitLab CI/CD, automated pipelines, and streamlined release processes."},{"label":"Containerization","description":"Docker-based workflows for deployment consistency and scalable environments."},{"label":"Documentation","description":"Creating clear technical documentation and system guidance for teams and stakeholders."}],"projectsTitle":"Selected Projects","projectsIntro":"Representative work from recent years with product teams and business clients.","projectCompanyPrefix":"for","contactTitle":"Contact","roleLabel":"Current Role:","roleValue":"Freelance Full Stack Developer at Kodevelop","educationLabel":"Education:","educationValue":"Bachelor in Electronics and ICT","locationLabel":"Location:","locationValue":"Izegem, Belgium","contactMessage":"For direct inquiries, please use my LinkedIn profile.","navServices":"Services","navProjects":"Projects","navTechnology":"Technology","navAbout":"About me","navContact":"Contact","heroEyebrow":"SOFTWARE & ARCHITECTURE","heroTitle":"Thoughtful software. Strong architecture.","heroText":"I help businesses build reliable, maintainable software that is ready for the future.","heroPrimaryCta":"Discuss your project","heroSecondaryCta":"View services","servicesTitle":"Services","services":[{"title":"Software development","description":"High-quality, scalable and maintainable applications."},{"title":"Software architecture","description":"Robust architectures that make growth and flexibility possible."},{"title":"DevOps & automation","description":"Efficient deployments, stable environments and less manual work."}],"aboutEyebrow":"ABOUT ME","aboutTitle":"Pragmatic. Engaged. Technically strong.","aboutText":"From technical analysis to implementation, I am a practical partner who thinks through the complete solution.","aboutLink":"More about me","technologiesTitle":"TECHNOLOGIES","technologies":[".NET","React","Node.js","SQL","Docker","CI/CD"],"contactCtaTitle":"Have an idea or technical challenge?","contactCtaLabel":"Get in touch","copyrightText":"kodevelop.be. All rights reserved.","projects":[{"id":"accident-manager","order":10,"title":"Accident Manager","url":"https://acm-tt.trustteam.be/","description":"Built for the Belgian insurance market to streamline communication between victims and insurers, reducing paper trails, incomplete files, and administrative delays. The platform supports a more structured claims process and is used by insurance companies to improve the flow of information and case handling","company":"Trustteam","companyUrl":"https://www.trustteam.be/"},{"id":"xy-tool","order":20,"title":"XY-Tool","url":"https://www.agoria.be/xy-tool/nl","description":"Designed to support the Belgian social election process for companies with more than 50 employees. The tool guides organizations through the rigid step-by-step process of organizing elections, helping them stay compliant and organized throughout the process","company":"Agoria","companyUrl":"https://www.agoria.be/"},{"id":"flexyoo","order":30,"title":"Flexyoo","url":"https://app.flexyoo.be/login?lang=nl","description":"A flexible payroll and benefits platform that helps companies offer employees extra legal benefits in a way that creates a net positive impact for both employees and employers. The solution supports employee choice, payroll flexibility, and a more engaging benefits experience","company":"Trustteam","companyUrl":"https://www.trustteam.be/"},{"id":"turnup","order":40,"title":"TurnUp","url":"https://www.turnup.world/nl/nl-platform/","description":"A customer-facing platform focused on reducing no-shows by following up with potential customers, nudging them toward action, and helping teams fill empty slots quickly when someone does not show up. It improves conversion and operational efficiency","company":"TurnUp World","companyUrl":"https://www.turnup.world/"}]},"nl":{"name":"Jens Malfait","headline":"Freelance Full Stack Developer · Software Architect · DevOps Engineer","profileTitle":"Professioneel profiel","profileText":"Ik ben een freelance softwareontwikkelaar uit Izegem, België, met meer dan 12 jaar ervaring in het bouwen van betrouwbare digitale producten voor een breed scala aan bedrijfsbehoeften. Ik werk aan full-stack ontwikkeling, back-end systemen, databases, architectuur en automatisering om teams te helpen applicaties veilig en schaalbaar op te bouwen.","expertiseTitle":"Kernexpertise","expertiseIntro":"Mijn werk combineert praktische engineering met schaalbare ontwerpen en onderhoudbare implementaties:","expertiseLabelSuffix":":","expertise":[{"label":"Back-End ontwikkeling","description":"ASP.NET, .NET Core, Entity Framework Core, REST API's en veilige applicatie-architectuur."},{"label":"Front-End ontwikkeling","description":"Angular, TypeScript en JavaScript voor responsieve, gebruiksvriendelijke interfaces."},{"label":"Software-architectuur","description":"Ontwerpen van modulaire, schaalbare oplossingen die duurzame onderhoudbaarheid ondersteunen."},{"label":"Databasebeheer","description":"SQL Server, MySQL en Progress 4GL voor robuuste, data-gedreven applicaties."},{"label":"DevOps & automatisering","description":"Ervaring met GitLab CI/CD, geautomatiseerde pipelines en gestroomlijnde releaseprocessen."},{"label":"Containerisatie","description":"Docker-gebaseerde workflows voor consistente deployment en schaalbare omgevingen."},{"label":"Documentatie","description":"Het opstellen van duidelijke technische documentatie en systeemgidsen voor teams en stakeholders."}],"projectsTitle":"Geselecteerde projecten","projectsIntro":"Representatief werk uit recente jaren in samenwerking met productteams en zakelijke klanten.","projectCompanyPrefix":"voor","contactTitle":"Contact","roleLabel":"Huidige functie:","roleValue":"Freelance Full Stack Developer bij Kodevelop","educationLabel":"Opleiding:","educationValue":"Bachelor in Elektronica en ICT","locationLabel":"Locatie:","locationValue":"Izegem, België","contactMessage":"Voor directe vragen kunt u mijn LinkedIn-profiel gebruiken.","navServices":"Diensten","navProjects":"Projecten","navTechnology":"Technologie","navAbout":"Over mij","navContact":"Contact","heroEyebrow":"SOFTWARE & ARCHITECTURE","heroTitle":"Doordachte software. Sterke architectuur.","heroText":"Ik help bedrijven software bouwen die betrouwbaar, onderhoudbaar en klaar voor de toekomst is.","heroPrimaryCta":"Bespreek je project","heroSecondaryCta":"Bekijk diensten","servicesTitle":"Diensten","services":[{"title":"Softwareontwikkeling","description":"Kwalitatieve, schaalbare en onderhoudbare applicaties."},{"title":"Softwarearchitectuur","description":"Robuuste architecturen die groei en flexibiliteit mogelijk maken."},{"title":"DevOps & automatisering","description":"Efficiënte deployments, stabiele omgevingen en minder handwerk."}],"aboutEyebrow":"OVER MIJ","aboutTitle":"Pragmatisch. Betrokken. Technisch sterk.","aboutText":"Van technische analyse tot implementatie: een praktische partner die meedenkt over de volledige oplossing.","aboutLink":"Meer over mij","technologiesTitle":"TECHNOLOGIEËN","technologies":[".NET","React","Node.js","SQL","Docker","CI/CD"],"contactCtaTitle":"Een idee of technische uitdaging?","contactCtaLabel":"Neem contact op","copyrightText":"kodevelop.be. Alle rechten voorbehouden.","projects":[{"id":"accident-manager","order":10,"title":"Accident Manager","url":"https://acm-tt.trustteam.be/","description":"Ontwikkeld voor de Belgische verzekeringsmarkt om de communicatie tussen het slachtoffer en de verzekeraar te stroomlijnen. Het verkleint papierwerk, ontbrekende informatie en administratieve vertragingen, waardoor claims efficiënter en beter gestructureerd kunnen worden afgehandeld","company":"Trustteam","companyUrl":"https://www.trustteam.be/"},{"id":"xy-tool","order":20,"title":"XY-Tool","url":"https://www.agoria.be/xy-tool/nl","description":"Gebruik voor het organiseren van de Belgische sociale verkiezingen in bedrijven met meer dan 50 werknemers. De tool begeleidt organisaties stap voor stap door het strikte proces van het organiseren van de verkiezingen, zodat ze compliant en gestructureerd blijven","company":"Agoria","companyUrl":"https://www.agoria.be/"},{"id":"flexyoo","order":30,"title":"Flexyoo","url":"https://app.flexyoo.be/login?lang=nl","description":"Een flexibel payroll- en voordelenplatform dat bedrijven helpt om extra wettelijke voordelen aan te bieden. Dit geeft medewerkers meer keuze en levert zowel voor werknemers als werkgevers een positief netto effect op","company":"Trustteam","companyUrl":"https://www.trustteam.be/"},{"id":"turnup","order":40,"title":"TurnUp","url":"https://www.turnup.world/nl/nl-platform/","description":"Een platform voor klantgerichte bedrijven om het percentage no-shows te verminderen. Het stuurt potentiële klanten op een gerichte manier aan, volgt afwezigen op en probeert open plekken snel opnieuw te vullen wanneer iemand niet verschijnt","company":"TurnUp World","companyUrl":"https://www.turnup.world/"}]},"fr":{"name":"Jens Malfait","headline":"Développeur Full Stack Freelance · Architecte Logiciel · DevOps","profileTitle":"Profil professionnel","profileText":"Je suis un développeur logiciel freelance basé à Izegem, en Belgique, avec plus de 12 ans d'expérience dans la création de produits numériques fiables pour un large éventail de besoins professionnels. Je travaille sur le développement full stack, les systèmes backend, les bases de données, l'architecture et l'automatisation afin d'aider les équipes à concevoir des applications robustes et évolutives.","expertiseTitle":"Expertises clés","expertiseIntro":"Mon travail associe ingénierie concrète, conception évolutive et mise en œuvre maintenable :","expertiseLabelSuffix":" :","expertise":[{"label":"Développement back-end","description":"ASP.NET, .NET Core, Entity Framework Core, API REST et architecture applicative sécurisée."},{"label":"Développement front-end","description":"Angular, TypeScript et JavaScript pour des interfaces réactives et centrées sur l'utilisateur."},{"label":"Architecture logicielle","description":"Conception de solutions modulaires et évolutives, pensées pour une maintenance durable."},{"label":"Gestion de bases de données","description":"SQL Server, MySQL et Progress 4GL pour des applications solides et orientées données."},{"label":"DevOps & automatisation","description":"Expérience avec GitLab CI/CD, pipelines automatisés et processus de mise en production rationalisés."},{"label":"Conteneurisation","description":"Flux de travail basés sur Docker pour des déploiements cohérents et des environnements évolutifs."},{"label":"Documentation","description":"Rédaction de documentation technique claire et de guides système pour les équipes et les parties prenantes."}],"projectsTitle":"Projets sélectionnés","projectsIntro":"Des réalisations représentatives des dernières années en collaboration avec des équipes produit et des clients professionnels :","projectCompanyPrefix":"pour","contactTitle":"Contact","roleLabel":"Poste actuel :","roleValue":"Développeur Full Stack Freelance chez Kodevelop","educationLabel":"Formation :","educationValue":"Bachelor en Électronique et TIC","locationLabel":"Localisation :","locationValue":"Izegem, Belgique","contactMessage":"Pour toute demande directe, veuillez utiliser mon profil LinkedIn.","navServices":"Services","navProjects":"Projets","navTechnology":"Technologies","navAbout":"À propos","navContact":"Contact","heroEyebrow":"LOGICIEL & ARCHITECTURE","heroTitle":"Un logiciel réfléchi. Une architecture solide.","heroText":"J'aide les entreprises à créer des logiciels fiables, maintenables et prêts pour l'avenir.","heroPrimaryCta":"Parlons de votre projet","heroSecondaryCta":"Voir les services","servicesTitle":"Services","services":[{"title":"Développement logiciel","description":"Des applications qualitatives, évolutives et faciles à maintenir."},{"title":"Architecture logicielle","description":"Des architectures robustes qui favorisent la croissance et la flexibilité."},{"title":"DevOps & automatisation","description":"Des déploiements efficaces, des environnements stables et moins de tâches manuelles."}],"aboutEyebrow":"À PROPOS DE MOI","aboutTitle":"Pragmatique. Engagé. Une solide expertise technique.","aboutText":"De l'analyse technique à la mise en œuvre, je suis un partenaire pratique qui réfléchit à la solution complète.","aboutLink":"En savoir plus","technologiesTitle":"TECHNOLOGIES","technologies":[".NET","React","Node.js","SQL","Docker","CI/CD"],"contactCtaTitle":"Une idée ou un défi technique ?","contactCtaLabel":"Me contacter","copyrightText":"kodevelop.be. Tous droits réservés.","projects":[{"id":"accident-manager","order":10,"title":"Accident Manager","url":"https://acm-tt.trustteam.be/","description":"Conçu pour le marché belge de l'assurance afin de fluidifier la communication entre la victime et l'assureur. La solution réduit le papier, les informations manquantes et les retards administratifs, ce qui permet un traitement plus structuré des dossiers","company":"Trustteam","companyUrl":"https://www.trustteam.be/"},{"id":"xy-tool","order":20,"title":"XY-Tool","url":"https://www.agoria.be/xy-tool/nl","description":"Outil utilisé pour organiser les élections sociales belges dans les entreprises de plus de 50 salariés. Il accompagne les organisations dans la mise en œuvre rigoureuse et étape par étape du processus électoral afin d'assurer conformité et organisation","company":"Agoria","companyUrl":"https://www.agoria.be/"},{"id":"flexyoo","order":30,"title":"Flexyoo","url":"https://app.flexyoo.be/login?lang=nl","description":"Une solution de paie et d'avantages flexible qui aide les entreprises à proposer des avantages légaux complémentaires. Cela offre plus de choix aux salariés et crée un impact positif net à la fois pour les employés et les employeurs","company":"Trustteam","companyUrl":"https://www.trustteam.be/"},{"id":"turnup","order":40,"title":"TurnUp","url":"https://www.turnup.world/nl/nl-platform/","description":"Une plateforme orientée client permettant de réduire le taux de no-show. Elle suit les clients potentiels, les incite à agir et aide les équipes à combler rapidement une place vacante lorsqu'une personne ne se présente pas","company":"TurnUp World","companyUrl":"https://www.turnup.world/"}]},"de":{"name":"Jens Malfait","headline":"Freiberuflicher Full-Stack-Entwickler · Softwarearchitekt · DevOps Engineer","profileTitle":"Berufsprofil","profileText":"Ich bin ein freiberuflicher Softwareentwickler aus Izegem, Belgien, mit über 12 Jahren Erfahrung in der Entwicklung zuverlässiger digitaler Produkte für ein breites Spektrum an Geschäftsanforderungen. Ich arbeite an Full-Stack-Entwicklung, Backend-Systemen, Datenbanken, Architektur und Automatisierung, um Teams dabei zu unterstützen, Anwendungen sicher und skalierbar aufzubauen.","expertiseTitle":"Kernkompetenzen","expertiseIntro":"Meine Arbeit verbindet praktisches Engineering mit skalierbarer Gestaltung und wartbarer Umsetzung:","expertiseLabelSuffix":":","expertise":[{"label":"Back-End-Entwicklung","description":"ASP.NET, .NET Core, Entity Framework Core, REST-APIs und sichere Anwendungsarchitektur."},{"label":"Front-End-Entwicklung","description":"Angular, TypeScript und JavaScript für responsive, nutzerorientierte Oberflächen."},{"label":"Softwarearchitektur","description":"Entwurf modularer, skalierbarer Lösungen mit Fokus auf langfristige Wartbarkeit."},{"label":"Datenbankmanagement","description":"SQL Server, MySQL und Progress 4GL für robuste, datengetriebene Anwendungen."},{"label":"DevOps & Automatisierung","description":"Erfahrung mit GitLab CI/CD, automatisierten Pipelines und optimierten Release-Prozessen."},{"label":"Containerisierung","description":"Docker-basierte Workflows für konsistente Bereitstellungen und skalierbare Umgebungen."},{"label":"Dokumentation","description":"Erstellung klarer technischer Dokumentation und Systemanleitungen für Teams und Stakeholder."}],"projectsTitle":"Ausgewählte Projekte","projectsIntro":"Repräsentative Arbeiten aus den letzten Jahren in Zusammenarbeit mit Produktteams und Geschäftskunden:","projectCompanyPrefix":"für","contactTitle":"Kontakt","roleLabel":"Aktuelle Position:","roleValue":"Freiberuflicher Full-Stack-Entwickler bei Kodevelop","educationLabel":"Ausbildung:","educationValue":"Bachelor in Elektronik und ICT","locationLabel":"Standort:","locationValue":"Izegem, Belgien","contactMessage":"Für direkte Anfragen nutzen Sie bitte mein LinkedIn-Profil.","navServices":"Leistungen","navProjects":"Projekte","navTechnology":"Technologien","navAbout":"Über mich","navContact":"Kontakt","heroEyebrow":"SOFTWARE & ARCHITEKTUR","heroTitle":"Durchdachte Software. Starke Architektur.","heroText":"Ich helfe Unternehmen, zuverlässige, wartbare und zukunftsfähige Software zu entwickeln.","heroPrimaryCta":"Projekt besprechen","heroSecondaryCta":"Leistungen ansehen","servicesTitle":"Leistungen","services":[{"title":"Softwareentwicklung","description":"Hochwertige, skalierbare und wartbare Anwendungen."},{"title":"Softwarearchitektur","description":"Robuste Architekturen, die Wachstum und Flexibilität ermöglichen."},{"title":"DevOps & Automatisierung","description":"Effiziente Deployments, stabile Umgebungen und weniger manuelle Arbeit."}],"aboutEyebrow":"ÜBER MICH","aboutTitle":"Pragmatisch. Engagiert. Technisch versiert.","aboutText":"Von der technischen Analyse bis zur Umsetzung bin ich ein praxisorientierter Partner, der die Gesamtlösung mitdenkt.","aboutLink":"Mehr über mich","technologiesTitle":"TECHNOLOGIEN","technologies":[".NET","React","Node.js","SQL","Docker","CI/CD"],"contactCtaTitle":"Eine Idee oder technische Herausforderung?","contactCtaLabel":"Kontakt aufnehmen","copyrightText":"kodevelop.be. Alle Rechte vorbehalten.","projects":[{"id":"accident-manager","order":10,"title":"Accident Manager","url":"https://acm-tt.trustteam.be/","description":"Für den belgischen Versicherungsmarkt entwickelt, um die Kommunikation zwischen Opfer und Versicherer zu vereinfachen. Die Lösung reduziert Papierkram, fehlende Informationen und verwaltungstechnische Verzögerungen und verbessert so den Ablauf von Schadensfällen","company":"Trustteam","companyUrl":"https://www.trustteam.be/"},{"id":"xy-tool","order":20,"title":"XY-Tool","url":"https://www.agoria.be/xy-tool/nl","description":"Wird für die Organisation der belgischen sozialen Wahlen in Unternehmen mit mehr als 50 Mitarbeitenden eingesetzt. Das Tool begleitet Unternehmen Schritt für Schritt durch den strengen Ablauf der Wahlvorbereitung und sorgt so für Compliance und Struktur","company":"Agoria","companyUrl":"https://www.agoria.be/"},{"id":"flexyoo","order":30,"title":"Flexyoo","url":"https://app.flexyoo.be/login?lang=nl","description":"Eine flexible Lohn- und Benefits-Plattform, die Unternehmen hilft, zusätzliche gesetzliche Vorteile anzubieten. Dadurch erhalten Mitarbeitende mehr Wahlmöglichkeiten und beide Seiten profitieren davon, sowohl Arbeitnehmer als auch Arbeitgeber","company":"Trustteam","companyUrl":"https://www.trustteam.be/"},{"id":"turnup","order":40,"title":"TurnUp","url":"https://www.turnup.world/nl/nl-platform/","description":"Eine kundenorientierte Plattform zur Reduzierung von No-Shows. Sie verfolgt potenzielle Kunden, gibt gezielte Nachfassaktionen und hilft dabei, freie Plätze schnell wieder zu besetzen, wenn jemand nicht erscheint","company":"TurnUp World","companyUrl":"https://www.turnup.world/"}]}};
 
       const elements = {
-        name: document.getElementById('profile-name'),
-        headline: document.getElementById('profile-headline'),
-        profileTitle: document.getElementById('profile-title'),
-        profileText: document.getElementById('profile-text'),
-        expertiseTitle: document.getElementById('expertise-title'),
-        expertiseIntro: document.getElementById('expertise-intro'),
-        expertiseList: document.getElementById('expertise-list'),
+        navServices: document.getElementById('nav-services'),
+        navProjects: document.getElementById('nav-projects'),
+        navTechnology: document.getElementById('nav-technology'),
+        navAbout: document.getElementById('nav-about'),
+        navContact: document.getElementById('nav-contact'),
+        headerContact: document.getElementById('header-contact'),
+        heroEyebrow: document.getElementById('hero-eyebrow'),
+        heroTitle: document.getElementById('hero-title'),
+        heroText: document.getElementById('hero-text'),
+        heroPrimaryCta: document.getElementById('hero-primary-cta'),
+        heroSecondaryCta: document.getElementById('hero-secondary-cta'),
+        servicesTitle: document.getElementById('services-title'),
+        serviceTitles: [1, 2, 3].map((index) => document.getElementById(`service-title-${index}`)),
+        serviceDescriptions: [1, 2, 3].map(
+          (index) => document.getElementById(`service-description-${index}`)
+        ),
         projectsTitle: document.getElementById('projects-title'),
         projectsIntro: document.getElementById('projects-intro'),
-        projectsList: document.getElementById('projects-list'),
-        contactTitle: document.getElementById('contact-title'),
-        roleLabel: document.getElementById('role-label'),
-        roleValue: document.getElementById('role-value'),
-        educationLabel: document.getElementById('education-label'),
-        educationValue: document.getElementById('education-value'),
-        locationLabel: document.getElementById('location-label'),
-        locationValue: document.getElementById('location-value'),
-        contactMessage: document.getElementById('contact-message')
+        projectList: document.getElementById('project-list'),
+        aboutEyebrow: document.getElementById('about-eyebrow'),
+        aboutTitle: document.getElementById('about-title'),
+        aboutText: document.getElementById('about-text'),
+        aboutLink: document.getElementById('about-link'),
+        technologiesTitle: document.getElementById('technologies-title'),
+        technologyList: document.getElementById('technology-list'),
+        contactCtaTitle: document.getElementById('contact-cta-title'),
+        contactCtaLink: document.getElementById('contact-cta-link'),
+        copyright: document.getElementById('copyright-text')
       };
 
       const languageSelect = document.getElementById('language-select');
 
-      function createLink(text, url, className) {
-        const link = document.createElement('a');
-        link.className = className;
-        link.href = url;
-        link.target = '_blank';
-        link.rel = 'noreferrer';
-        link.textContent = text;
-        return link;
-      }
-
-      function renderExpertise(items, labelSuffix) {
-        elements.expertiseList.replaceChildren(...items.map((item) => {
-          const listItem = document.createElement('li');
-          const label = document.createElement('strong');
-          label.textContent = item.label + labelSuffix;
-          listItem.append(label, document.createTextNode(' ' + item.description));
-          return listItem;
-        }));
-      }
-
       function renderProjects(projects, companyPrefix) {
-        elements.projectsList.replaceChildren(...projects.map((project) => {
-          const listItem = document.createElement('li');
-          listItem.append(
-            createLink(project.title, project.url, 'project-link'),
-            document.createTextNode(' — ' + project.description + ' ' + companyPrefix + ' '),
-            createLink(project.company, project.companyUrl, 'company-link'),
-            document.createTextNode('.')
-          );
-          return listItem;
+        elements.projectList.replaceChildren(...projects.map((project) => {
+          const card = document.createElement('article');
+          card.className = 'project-card';
+
+          const title = document.createElement('h3');
+          const projectLink = document.createElement('a');
+          projectLink.href = project.url;
+          projectLink.target = '_blank';
+          projectLink.rel = 'noreferrer';
+          projectLink.textContent = project.title;
+          title.append(projectLink);
+
+          const description = document.createElement('p');
+          description.textContent = project.description;
+
+          const company = document.createElement('p');
+          company.className = 'project-company';
+          company.append(document.createTextNode(companyPrefix + ' '));
+          const companyLink = document.createElement('a');
+          companyLink.href = project.companyUrl;
+          companyLink.target = '_blank';
+          companyLink.rel = 'noreferrer';
+          companyLink.textContent = project.company;
+          company.append(companyLink);
+
+          card.append(title, description, company);
+          return card;
         }));
       }
 
@@ -387,26 +881,40 @@
         if (!content) return;
 
         document.documentElement.lang = lang;
-        document.title = content.name + ' | ' + content.headline.split('·')[0].trim();
+        document.title = content.name + ' | ' + content.heroTitle;
 
-        elements.name.textContent = content.name;
-        elements.headline.textContent = content.headline;
-        elements.profileTitle.textContent = content.profileTitle;
-        elements.profileText.textContent = content.profileText;
-        elements.expertiseTitle.textContent = content.expertiseTitle;
-        elements.expertiseIntro.textContent = content.expertiseIntro;
-        renderExpertise(content.expertise, content.expertiseLabelSuffix);
+        elements.navServices.textContent = content.navServices;
+        elements.navProjects.textContent = content.navProjects;
+        elements.navTechnology.textContent = content.navTechnology;
+        elements.navAbout.textContent = content.navAbout;
+        elements.navContact.textContent = content.navContact;
+        elements.headerContact.textContent = content.navContact;
+        elements.heroEyebrow.textContent = content.heroEyebrow;
+        elements.heroTitle.textContent = content.heroTitle;
+        elements.heroText.textContent = content.heroText;
+        elements.heroPrimaryCta.firstElementChild.textContent = content.heroPrimaryCta;
+        elements.heroSecondaryCta.textContent = content.heroSecondaryCta;
+        elements.servicesTitle.textContent = content.servicesTitle;
+        content.services.forEach((service, index) => {
+          elements.serviceTitles[index].textContent = service.title;
+          elements.serviceDescriptions[index].textContent = service.description;
+        });
         elements.projectsTitle.textContent = content.projectsTitle;
         elements.projectsIntro.textContent = content.projectsIntro;
         renderProjects(content.projects, content.projectCompanyPrefix);
-        elements.contactTitle.textContent = content.contactTitle;
-        elements.roleLabel.textContent = content.roleLabel;
-        elements.roleValue.textContent = content.roleValue;
-        elements.educationLabel.textContent = content.educationLabel;
-        elements.educationValue.textContent = content.educationValue;
-        elements.locationLabel.textContent = content.locationLabel;
-        elements.locationValue.textContent = content.locationValue;
-        elements.contactMessage.textContent = content.contactMessage;
+        elements.aboutEyebrow.textContent = content.aboutEyebrow;
+        elements.aboutTitle.textContent = content.aboutTitle;
+        elements.aboutText.textContent = content.aboutText;
+        elements.aboutLink.textContent = content.aboutLink;
+        elements.technologiesTitle.textContent = content.technologiesTitle;
+        elements.technologyList.replaceChildren(...content.technologies.map((technology) => {
+          const item = document.createElement('li');
+          item.textContent = technology;
+          return item;
+        }));
+        elements.contactCtaTitle.textContent = content.contactCtaTitle;
+        elements.contactCtaLink.firstElementChild.textContent = content.contactCtaLabel;
+        elements.copyright.textContent = '© ' + new Date().getFullYear() + ' ' + content.copyrightText;
         languageSelect.value = lang;
       }
 
