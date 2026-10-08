@@ -12,6 +12,9 @@ function createNode(tagName = '') {
     tagName,
     children: [],
     textContent: '',
+    get firstElementChild() {
+      return this.children[0];
+    },
     append(...children) {
       this.children.push(...children);
     },
@@ -21,7 +24,7 @@ function createNode(tagName = '') {
   };
 }
 
-test('generated page renders localized profile and project content', () => {
+test('generated page renders localized landing-page content', () => {
   const build = spawnSync(process.execPath, [path.join(root, 'scripts', 'build.js')], {
     cwd: root,
     encoding: 'utf8'
@@ -34,28 +37,45 @@ test('generated page renders localized profile and project content', () => {
   assert.ok(scriptMatch);
 
   const elementIds = [
-    'profile-name',
-    'profile-headline',
-    'profile-title',
-    'profile-text',
-    'expertise-title',
-    'expertise-intro',
-    'expertise-list',
+    'nav-services',
+    'nav-projects',
+    'nav-technology',
+    'nav-about',
+    'nav-contact',
+    'header-contact',
+    'hero-eyebrow',
+    'hero-title',
+    'hero-text',
+    'hero-primary-cta',
+    'hero-secondary-cta',
+    'services-title',
+    'service-title-1',
+    'service-title-2',
+    'service-title-3',
+    'service-description-1',
+    'service-description-2',
+    'service-description-3',
     'projects-title',
     'projects-intro',
-    'projects-list',
-    'contact-title',
-    'role-label',
-    'role-value',
-    'education-label',
-    'education-value',
-    'location-label',
-    'location-value',
-    'contact-message',
+    'project-list',
+    'about-eyebrow',
+    'about-title',
+    'about-text',
+    'about-link',
+    'technologies-title',
+    'technology-list',
+    'contact-cta-title',
+    'contact-cta-link',
+    'copyright-text',
     'language-select'
   ];
   const elements = Object.fromEntries(elementIds.map((id) => [id, createNode()]));
-  elements['language-select'].addEventListener = () => {};
+  elements['hero-primary-cta'].append(createNode('span'), createNode('span'));
+  elements['contact-cta-link'].append(createNode('span'), createNode('span'));
+  let changeHandler;
+  elements['language-select'].addEventListener = (eventName, handler) => {
+    if (eventName === 'change') changeHandler = handler;
+  };
 
   const document = {
     title: '',
@@ -64,34 +84,49 @@ test('generated page renders localized profile and project content', () => {
     createElement: (tagName) => createNode(tagName),
     createTextNode: (textContent) => ({ textContent })
   };
+  const savedValues = new Map();
 
   vm.runInNewContext(scriptMatch[1], {
     document,
     localStorage: {
       getItem: () => null,
-      setItem: () => {}
+      setItem: (key, value) => savedValues.set(key, value)
     },
     navigator: {
       languages: ['en-US'],
       language: 'en-US'
     },
-    URL
   });
 
   assert.equal(document.documentElement.lang, 'en');
-  assert.equal(elements['profile-name'].textContent, 'Jens Malfait');
-  assert.equal(elements['expertise-list'].children.length, 7);
+  assert.equal(document.title, 'Jens Malfait | Thoughtful software. Strong architecture.');
+  assert.equal(elements['hero-title'].textContent, 'Thoughtful software. Strong architecture.');
+  assert.equal(elements['service-title-1'].textContent, 'Software development');
   assert.equal(
-    elements['expertise-list'].children[0].children[0].textContent,
-    'Back-End Development:'
+    elements['service-title-3'].textContent,
+    'DevOps & automation'
   );
-  assert.equal(elements['projects-list'].children.length, 4);
+  assert.equal(elements['technology-list'].children.length, 6);
+  assert.equal(elements['contact-cta-title'].textContent, 'Have an idea or technical challenge?');
+  assert.match(elements['copyright-text'].textContent, /^© \d{4} kodevelop\.be\./);
+  assert.match(html, /id="services"/);
+  assert.equal(elements['projects-title'].textContent, 'Selected Projects');
+  assert.equal(elements['project-list'].children.length, 4);
   assert.equal(
-    elements['projects-list'].children[0].children[0].href,
+    elements['project-list'].children[0].children[0].children[0].href,
     'https://acm-tt.trustteam.be/'
   );
   assert.match(
-    elements['projects-list'].children[0].children[1].textContent,
-    /case handling for /
+    elements['project-list'].children[0].children[1].textContent,
+    /Belgian insurance market/
   );
+  assert.equal(elements['nav-projects'].textContent, 'Projects');
+  assert.equal((html.match(/class="service-card"/g) || []).length, 3);
+
+  changeHandler({ target: { value: 'nl' } });
+  assert.equal(document.documentElement.lang, 'nl');
+  assert.equal(elements['hero-title'].textContent, 'Doordachte software. Sterke architectuur.');
+  assert.equal(elements['projects-title'].textContent, 'Geselecteerde projecten');
+  assert.equal(elements['nav-projects'].textContent, 'Projecten');
+  assert.equal(savedValues.get('kde-language'), 'nl');
 });

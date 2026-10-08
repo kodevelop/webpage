@@ -38,3 +38,36 @@ educationValue: Bachelor in Electronics and ICT
 locationLabel: "Location:"
 locationValue: Izegem, Belgium
 contactMessage: For direct inquiries, please use my LinkedIn profile.
+navServices: Services
+navProjects: Projects
+navTechnology: Technology
+navAbout: About me
+navContact: Contact
+heroEyebrow: SOFTWARE & ARCHITECTURE
+heroTitle: Thoughtful software. Strong architecture.
+heroText: I help businesses build reliable, maintainable software that is ready for the future.
+heroPrimaryCta: Discuss your project
+heroSecondaryCta: View services
+servicesTitle: Services
+services:
+  - title: Software development
+    description: High-quality, scalable and maintainable applications.
+  - title: Software architecture
+    description: Robust architectures that make growth and flexibility possible.
+  - title: DevOps & automation
+    description: Efficient deployments, stable environments and less manual work.
+aboutEyebrow: ABOUT ME
+aboutTitle: Pragmatic. Engaged. Technically strong.
+aboutText: From technical analysis to implementation, I am a practical partner who thinks through the complete solution.
+aboutLink: More about me
+technologiesTitle: TECHNOLOGIES
+technologies:
+  - .NET
+  - React
+  - Node.js
+  - SQL
+  - Docker
+  - CI/CD
+contactCtaTitle: Have an idea or technical challenge?
+contactCtaLabel: Get in touch
+copyrightText: kodevelop.be. All rights reserved.

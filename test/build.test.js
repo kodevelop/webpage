@@ -27,7 +27,32 @@ const profile = {
   educationValue: 'Degree',
   locationLabel: 'Location',
   locationValue: 'Belgium',
-  contactMessage: 'Message'
+  contactMessage: 'Message',
+  navServices: 'Services',
+  navProjects: 'Projects',
+  navTechnology: 'Technology',
+  navAbout: 'About me',
+  navContact: 'Contact',
+  heroEyebrow: 'SOFTWARE & ARCHITECTURE',
+  heroTitle: 'Thoughtful software. Strong architecture.',
+  heroText: 'Intro',
+  heroPrimaryCta: 'Discuss your project',
+  heroSecondaryCta: 'View services',
+  servicesTitle: 'Services',
+  services: [
+    { title: 'Development', description: 'Description' },
+    { title: 'Architecture', description: 'Description' },
+    { title: 'DevOps', description: 'Description' }
+  ],
+  aboutEyebrow: 'ABOUT ME',
+  aboutTitle: 'Pragmatic and technical',
+  aboutText: 'About',
+  aboutLink: 'More about me',
+  technologiesTitle: 'TECHNOLOGIES',
+  technologies: ['.NET', 'React', 'Node.js'],
+  contactCtaTitle: 'Have an idea?',
+  contactCtaLabel: 'Get in touch',
+  copyrightText: 'kodevelop.be. All rights reserved.'
 };
 
 const project = {
@@ -98,5 +123,16 @@ test('rejects inconsistent project ordering', () => {
   );
 
   assert.throws(() => loadContent(directory), /order: differs from en/);
+  fs.rmSync(directory, { recursive: true, force: true });
+});
+
+test('rejects a service list that does not match the three-card layout', () => {
+  const directory = createContent();
+  fs.writeFileSync(
+    path.join(directory, 'nl', 'profile.yaml'),
+    yaml.dump({ ...profile, services: profile.services.slice(0, 2) })
+  );
+
+  assert.throws(() => loadContent(directory), /services: expected exactly three service cards/);
   fs.rmSync(directory, { recursive: true, force: true });
 });

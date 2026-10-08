@@ -29,7 +29,28 @@ const profileFields = [
   'educationValue',
   'locationLabel',
   'locationValue',
-  'contactMessage'
+  'contactMessage',
+  'navServices',
+  'navProjects',
+  'navTechnology',
+  'navAbout',
+  'navContact',
+  'heroEyebrow',
+  'heroTitle',
+  'heroText',
+  'heroPrimaryCta',
+  'heroSecondaryCta',
+  'servicesTitle',
+  'services',
+  'aboutEyebrow',
+  'aboutTitle',
+  'aboutText',
+  'aboutLink',
+  'technologiesTitle',
+  'technologies',
+  'contactCtaTitle',
+  'contactCtaLabel',
+  'copyrightText'
 ];
 
 const projectFields = [
@@ -94,7 +115,9 @@ function validateUrl(value, source) {
 function validateProfile(profile, source) {
   validateExactFields(profile, profileFields, source);
 
-  for (const field of profileFields.filter((field) => field !== 'expertise')) {
+  for (const field of profileFields.filter(
+    (field) => !['expertise', 'services', 'technologies'].includes(field)
+  )) {
     validateString(profile[field], `${source}.${field}`);
   }
 
@@ -107,6 +130,25 @@ function validateProfile(profile, source) {
     validateExactFields(item, ['label', 'description'], itemSource);
     validateString(item.label, `${itemSource}.label`);
     validateString(item.description, `${itemSource}.description`);
+  });
+
+  if (!Array.isArray(profile.services) || profile.services.length !== 3) {
+    fail(`${source}.services: expected exactly three service cards`);
+  }
+
+  profile.services.forEach((item, index) => {
+    const itemSource = `${source}.services[${index}]`;
+    validateExactFields(item, ['title', 'description'], itemSource);
+    validateString(item.title, `${itemSource}.title`);
+    validateString(item.description, `${itemSource}.description`);
+  });
+
+  if (!Array.isArray(profile.technologies) || profile.technologies.length === 0) {
+    fail(`${source}.technologies: expected a non-empty list`);
+  }
+
+  profile.technologies.forEach((item, index) => {
+    validateString(item, `${source}.technologies[${index}]`);
   });
 }
 

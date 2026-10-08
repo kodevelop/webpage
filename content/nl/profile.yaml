@@ -38,3 +38,36 @@ educationValue: Bachelor in Elektronica en ICT
 locationLabel: "Locatie:"
 locationValue: Izegem, België
 contactMessage: Voor directe vragen kunt u mijn LinkedIn-profiel gebruiken.
+navServices: Diensten
+navProjects: Projecten
+navTechnology: Technologie
+navAbout: Over mij
+navContact: Contact
+heroEyebrow: SOFTWARE & ARCHITECTURE
+heroTitle: Doordachte software. Sterke architectuur.
+heroText: Ik help bedrijven software bouwen die betrouwbaar, onderhoudbaar en klaar voor de toekomst is.
+heroPrimaryCta: Bespreek je project
+heroSecondaryCta: Bekijk diensten
+servicesTitle: Diensten
+services:
+  - title: Softwareontwikkeling
+    description: Kwalitatieve, schaalbare en onderhoudbare applicaties.
+  - title: Softwarearchitectuur
+    description: Robuuste architecturen die groei en flexibiliteit mogelijk maken.
+  - title: DevOps & automatisering
+    description: Efficiënte deployments, stabiele omgevingen en minder handwerk.
+aboutEyebrow: OVER MIJ
+aboutTitle: Pragmatisch. Betrokken. Technisch sterk.
+aboutText: "Van technische analyse tot implementatie: een praktische partner die meedenkt over de volledige oplossing."
+aboutLink: Meer over mij
+technologiesTitle: TECHNOLOGIEËN
+technologies:
+  - .NET
+  - React
+  - Node.js
+  - SQL
+  - Docker
+  - CI/CD
+contactCtaTitle: Een idee of technische uitdaging?
+contactCtaLabel: Neem contact op
+copyrightText: kodevelop.be. Alle rechten voorbehouden.
